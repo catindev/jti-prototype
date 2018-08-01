@@ -49,7 +49,7 @@
                 </ul>
                 <form class="form-inline mt-2 mt-md-0">
                     <button type="button" class="btn btn-link my-2 my-sm-0" style="color:#fff">
-                        Толькочитающий Т.
+                        Представительский П.
                     </button>
                     <span class="text-muted">|</span>
                     <a href="../index.html" class="btn btn-link my-2 my-sm-0">Выход</a>
@@ -68,7 +68,25 @@
                         <a class="nav-link active" href="index.html">Все планограммы</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="my.html">Мои планограммы</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="search.html">Поиск</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="search.html">Новая планограмма</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="drafts.html">
+                            Черновики
+                            <span class="badge badge-info">1</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="approve.html">
+                            На утверждении
+                            <span class="badge badge-danger">2</span>
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -178,13 +196,9 @@
 
     </main>
 
-
-    <!-- jQuery CDN - Slim version (=without AJAX) -->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <!-- Popper.JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
         crossorigin="anonymous"></script>
-    <!-- Bootstrap JS -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
         crossorigin="anonymous"></script>
     <script>
@@ -192,7 +206,8 @@
             $(".alert").hide();
             draftsCounter.innerText = 2
             $("#success").fadeIn()
-        });</script>
+        });
+    </script>
 </body>
 
 </html>

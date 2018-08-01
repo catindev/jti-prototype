@@ -49,7 +49,7 @@
                     </li>
                 </ul>
                 <form class="form-inline mt-2 mt-md-0">
-                    <button type="button" class="btn btn-link my-2 my-sm-0" style="color:#fff">Толькочитающий Т.</button>
+                    <button type="button" class="btn btn-link my-2 my-sm-0" style="color:#fff">Представительский П.</button>
                     <span class="text-muted">|</span>
                     <a href="../index.html" class="btn btn-link my-2 my-sm-0">Выход</a>
                 </form>
@@ -62,20 +62,56 @@
             <div class="card-header">
                 <ul class="nav nav-tabs card-header-tabs">
                     <li class="nav-item">
-                        <a class="nav-link active" href="index.html">Все планограммы</a>
+                        <a class="nav-link" href="index.html">Все планограммы</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="my.html">Мои планограммы</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="search.html">Поиск</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="new.html">Новая планограмма</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="drafts.html">
+                            Черновики
+                            <span class="badge badge-info">1</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="approve.html">
+                            На утверждении
+                            <span class="badge badge-danger">2</span>
+                        </a>
                     </li>
                 </ul>
             </div>
             <div class="card-body">
 
+                <div class="card">
+                    <div class="card-body">
+                        Действия с выбранными:
+                        <a href="#" class="btn btn-outline-primary btn-sm">
+                            <i class="fas fa-download"></i>
+                            Скачать изображения
+                        </a>
+                        <a href="#" class="btn btn-sm btn-outline-primary">
+                            <i class="fas fa-copy"></i>
+                            Скопировать
+                        </a>
+                        <a href="search.html" class="btn btn-primary btn-sm" style="float: right;">
+                            <i class="fas fa-search"></i>
+                            Поиск
+                        </a>
+                    </div>
+                </div>
+
                 <table class="table table-condensed table-hover">
                     <thead>
                         <tr>
+                            <th></th>
                             <th class="d-none d-lg-table-cell">Создана</th>
-                            <th class="d-none d-lg-table-cell">Автор</th>
                             <th>Название</th>
                             <th>Регион</th>
                             <th class="text-right d-none d-lg-table-cell">Действия</th>
@@ -84,11 +120,16 @@
                     <tbody>
 
                         <tr>
+                            <td>
+                                <input type="checkbox" />
+                            </td>
                             <td class="d-none d-lg-table-cell">2018/07/21</td>
-                            <td class="d-none d-lg-table-cell">Ruby Mills</td>
                             <td>JTI100Backwall__Мос.обл.__07-09.18</td>
                             <td>Москва и МО</td>
                             <td class="text-right d-none d-lg-table-cell">
+                                <button class="btn btn-sm btn-outline-primary">
+                                    <i class="fas fa-copy"></i>
+                                </button>
                                 <a href="planogram.png" class="btn btn-sm btn-outline-primary">
                                     <i class="fas fa-download"></i>
                                 </a>
@@ -96,11 +137,16 @@
                         </tr>
 
                         <tr>
+                            <td>
+                                <input type="checkbox" />
+                            </td>
                             <td class="d-none d-lg-table-cell">2018/07/11</td>
-                            <td class="d-none d-lg-table-cell">Ramona Green</td>
                             <td>JTI100Backwall__Мос.обл.__08-09.18</td>
                             <td>Москва и МО</td>
                             <td class="text-right d-none d-lg-table-cell">
+                                <button class="btn btn-sm btn-outline-primary">
+                                    <i class="fas fa-copy"></i>
+                                </button>
                                 <a href="planogram.png" target="_blank" class="btn btn-sm btn-outline-primary">
                                     <i class="fas fa-download"></i>
                                 </a>
@@ -108,11 +154,16 @@
                         </tr>
 
                         <tr>
+                            <td>
+                                <input type="checkbox" />
+                            </td>
                             <td class="d-none d-lg-table-cell">2018/07/1</td>
-                            <td class="d-none d-lg-table-cell">Toni Ross</td>
                             <td>JTI120Backwall__Мос.обл.__08-09.18</td>
                             <td>Москва и МО</td>
                             <td class="text-right d-none d-lg-table-cell">
+                                <button class="btn btn-sm btn-outline-primary">
+                                    <i class="fas fa-copy"></i>
+                                </button>
                                 <a href="planogram.png" target="_blank" class="btn btn-sm btn-outline-primary">
                                     <i class="fas fa-download"></i>
                                 </a>
@@ -120,11 +171,16 @@
                         </tr>
 
                         <tr>
+                            <td>
+                                <input type="checkbox" />
+                            </td>
                             <td class="d-none d-lg-table-cell">2018/07/21</td>
-                            <td class="d-none d-lg-table-cell">Ruby Mills</td>
                             <td>JTI100Backwall__Мос.обл.__07-09.18</td>
                             <td>Москва и МО</td>
                             <td class="text-right d-none d-lg-table-cell">
+                                <button class="btn btn-sm btn-outline-primary">
+                                    <i class="fas fa-copy"></i>
+                                </button>
                                 <a href="planogram.png" target="_blank" class="btn btn-sm btn-outline-primary">
                                     <i class="fas fa-download"></i>
                                 </a>
@@ -132,11 +188,16 @@
                         </tr>
 
                         <tr class="table-warning">
+                            <td>
+                                <input type="checkbox" />
+                            </td>
                             <td class="d-none d-lg-table-cell">2018/07/13</td>
-                            <td class="d-none d-lg-table-cell">Vicki Lucas</td>
                             <td>JTI120BackwallNSS3-4__Мос.обл.__08-09.18</td>
                             <td>Москва и МО</td>
                             <td class="text-right d-none d-lg-table-cell">
+                                <button class="btn btn-sm btn-outline-primary">
+                                    <i class="fas fa-copy"></i>
+                                </button>
                                 <a href="planogram.png" target="_blank" class="btn btn-sm btn-outline-primary">
                                     <i class="fas fa-download"></i>
                                 </a>
@@ -145,11 +206,16 @@
                         </tr>
 
                         <tr class="table-light">
+                            <td>
+                                <input type="checkbox" />
+                            </td>
                             <td class="d-none d-lg-table-cell">2018/07/23</td>
-                            <td class="d-none d-lg-table-cell">Jerome Webb</td>
                             <td>JTI120Backwall__Мос.обл.__08-09.18</td>
                             <td>Москва и МО</td>
                             <td class="text-right d-none d-lg-table-cell">
+                                <button class="btn btn-sm btn-outline-primary">
+                                    <i class="fas fa-copy"></i>
+                                </button>
                                 <a href="planogram.png" target="_blank" class="btn btn-sm btn-outline-primary">
                                     <i class="fas fa-download"></i>
                                 </a>
@@ -157,27 +223,40 @@
                         </tr>
 
                         <tr>
+                            <td>
+                                <input type="checkbox" />
+                            </td>
                             <td class="d-none d-lg-table-cell">2018/04/31</td>
-                            <td class="d-none d-lg-table-cell">Mattie Lynch</td>
                             <td>
                                 <i class="fas fa-drafting-compass"></i>
                                 JTI100BackwallNSS4-5__Мос.обл
                             </td>
                             <td>Москва и МО</td>
                             <td class="text-right d-none d-lg-table-cell">
+                                <button class="btn btn-sm btn-outline-primary">
+                                    <i class="fas fa-copy"></i>
+                                </button>
                                 <a href="planogram.png" target="_blank" class="btn btn-sm btn-outline-primary">
                                     <i class="fas fa-download"></i>
                                 </a>
+                                <button class="btn btn-sm btn-outline-danger">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
                             </td>
                         </tr>
 
 
                         <tr class="table-success">
+                            <td>
+                                <input type="checkbox" />
+                            </td>
                             <td class="d-none d-lg-table-cell">2018/07/14</td>
-                            <td class="d-none d-lg-table-cell">Claire Sullivan</td>
                             <td>JTI120Backwall__Мос.обл.__08-09.18</td>
                             <td>Москва и МО</td>
                             <td class="text-right d-none d-lg-table-cell">
+                                <button class="btn btn-sm btn-outline-primary">
+                                    <i class="fas fa-copy"></i>
+                                </button>
                                 <a href="planogram.png" target="_blank" class="btn btn-sm btn-outline-primary">
                                     <i class="fas fa-download"></i>
                                 </a>
@@ -185,11 +264,16 @@
                         </tr>
 
                         <tr class="table-warning">
+                            <td>
+                                <input type="checkbox" />
+                            </td>
                             <td class="d-none d-lg-table-cell">2018/07/1</td>
-                            <td class="d-none d-lg-table-cell">Scott Gonzalez</td>
                             <td>JTI100BackwallNSS4-5__Мос.обл.__07-08.18</td>
                             <td>Москва и МО</td>
                             <td class="text-right d-none d-lg-table-cell">
+                                <button class="btn btn-sm btn-outline-primary">
+                                    <i class="fas fa-copy"></i>
+                                </button>
                                 <a href="planogram.png" target="_blank" class="btn btn-sm btn-outline-primary">
                                     <i class="fas fa-download"></i>
                                 </a>
@@ -198,26 +282,39 @@
 
 
                         <tr>
+                            <td>
+                                <input type="checkbox" />
+                            </td>
                             <td class="d-none d-lg-table-cell">2018/07/05</td>
-                            <td class="d-none d-lg-table-cell">Scarlett Andrews</td>
                             <td>
                                 <i class="fas fa-drafting-compass"></i>
                                 JTI100BackwallNSS4-5__Мос.обл
                             </td>
                             <td>Москва и МО</td>
                             <td class="text-right d-none d-lg-table-cell">
+                                <button class="btn btn-sm btn-outline-primary">
+                                    <i class="fas fa-copy"></i>
+                                </button>
                                 <a href="planogram.png" target="_blank" class="btn btn-sm btn-outline-primary">
                                     <i class="fas fa-download"></i>
                                 </a>
+                                <button class="btn btn-sm btn-outline-danger">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
                             </td>
                         </tr>
 
                         <tr class="table-light">
+                            <td>
+                                <input type="checkbox" />
+                            </td>
                             <td class="d-none d-lg-table-cell">2018/07/05</td>
-                            <td class="d-none d-lg-table-cell">Lance Miles</td>
                             <td>JTI120Backwall__Мос.обл.__08-09.18</td>
                             <td>Москва и МО</td>
                             <td class="text-right d-none d-lg-table-cell">
+                                <button class="btn btn-sm btn-outline-primary">
+                                    <i class="fas fa-copy"></i>
+                                </button>
                                 <a href="planogram.png" target="_blank" class="btn btn-sm btn-outline-primary">
                                     <i class="fas fa-download"></i>
                                 </a>
@@ -225,11 +322,16 @@
                         </tr>
 
                         <tr class="table-success">
+                            <td>
+                                <input type="checkbox" />
+                            </td>
                             <td class="d-none d-lg-table-cell">2018/07/01</td>
-                            <td class="d-none d-lg-table-cell">Melvin Freeman</td>
                             <td>JTI120Backwall__Мос.обл.__08-09.18</td>
                             <td>Москва и МО</td>
                             <td class="text-right d-none d-lg-table-cell">
+                                <button class="btn btn-sm btn-outline-primary">
+                                    <i class="fas fa-copy"></i>
+                                </button>
                                 <a href="planogram.png" target="_blank" class="btn btn-sm btn-outline-primary">
                                     <i class="fas fa-download"></i>
                                 </a>
@@ -238,6 +340,7 @@
                         </tr>
                     </tbody>
                 </table>
+
                 <nav aria-label="Page navigation example">
                     <ul class="pagination justify-content-center">
                         <li class="page-item disabled">
