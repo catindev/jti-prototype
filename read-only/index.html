@@ -34,7 +34,6 @@
 <body>
 
     <header>
-        <!-- Fixed navbar -->
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
             <a class="navbar-brand" href="#">JTI</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
@@ -59,17 +58,19 @@
     </header>
 
     <main role="main" class="container">
-
-
         <div class="card">
             <div class="card-header">
                 <ul class="nav nav-tabs card-header-tabs">
                     <li class="nav-item">
                         <a class="nav-link active" href="index.html">Все планограммы</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="search.html">Поиск</a>
+                    </li>
                 </ul>
             </div>
             <div class="card-body">
+
                 <table class="table table-condensed table-hover">
                     <thead>
                         <tr>
@@ -88,7 +89,7 @@
                             <td>JTI100Backwall__Мос.обл.__07-09.18</td>
                             <td>Москва и МО</td>
                             <td class="text-right d-none d-lg-table-cell">
-                                <a href="planogram.png" target="_blank" class="btn btn-sm btn-outline-primary">
+                                <a href="planogram.png" class="btn btn-sm btn-outline-primary">
                                     <i class="fas fa-download"></i>
                                 </a>
                             </td>
@@ -267,17 +268,9 @@
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
         crossorigin="anonymous"></script>
-
-    <!-- <script>
-        setTimeout(function () {
-            $("#success").fadeIn()
-        }, 500);
-    </script> -->
-
-
     <script>
         $('.table-hover tbody tr').click(function () {
-            location.href = 'index-card-view.html'
+            location.href = 'card.html'
         })
     </script>
 </body>
