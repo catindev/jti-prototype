@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>JTI - Панель управления</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+        crossorigin="anonymous">
+
+    <style>
+        .alert {
+            display: none;
+        }
+
+
+        th {
+            border: 0 !important;
+        }
+
+        .btn-sm {
+            margin-left: .5rem;
+        }
+
+        .container {
+            padding-top: 6rem;
+            padding-bottom: 4rem;
+        }
+
+        .table-hover tbody tr:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Добавить пользователя</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="username">Имя</label>
+                            <input type="text" class="form-control" id="username" aria-describedby="username" placeholder="Иванов Иван">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Эл. почта</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="user_name@jti.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">Роль</label>
+                            <select class="form-control" id="exampleFormControlSelect1">
+                                <option></option>
+                                <option>Только чтение</option>
+                                <option>Представитель региона</option>
+                                <option>Администратор</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Добавить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="exampleModalEdit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelEdit" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabelEdit">Редактировать пользователя</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="usernameEdit">Имя</label>
+                            <input type="text" class="form-control" id="usernameEdit" aria-describedby="username" placeholder="Иванов Иван" value="Ruby Mills">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1Edit">Эл. почта</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1Edit" aria-describedby="emailHelp" placeholder="user_name@jti.com"
+                                value="ruby_mills@jti.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1Edit">Роль</label>
+                            <select class="form-control" id="exampleFormControlSelect1Edit">
+                                <option>Только чтение</option>
+                                <option>Представитель региона</option>
+                                <option>Администратор</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Сохранить</button>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" href="#">JTI</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Планограммы
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Панель управления
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                </ul>
+                <form class="form-inline mt-2 mt-md-0">
+                    <button type="button" class="btn btn-link my-2 my-sm-0" style="color:#fff">Администраторский А.</button>
+                    <span class="text-muted">|</span>
+                    <a href="../index.html" class="btn btn-link my-2 my-sm-0">Выход</a>
+                </form>
+            </div>
+        </nav>
+    </header>
+
+    <main role="main" class="container">
+        <div class="card">
+            <div class="card-header">
+                <ul class="nav nav-tabs card-header-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Пользователи</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="dictionaries.html">Справочники</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="packshots.html">Пэкшоты</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="posm.html">POSM</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="card-body">
+
+                <div class="alert alert-success" role="alert" id="success">
+                    <i class="fas fa-user"></i>
+                    Пользователь добавлен
+                </div>
+
+                <div style="padding: 1rem 0;">
+                    <input type="text" class="form-control" placeholder="Поиск по имени или эл. почте" />
+                </div>
+
+                <table class="table table-condensed table-hover">
+                    <thead>
+                        <tr>
+                            <th>Имя</th>
+                            <th class="d-none d-lg-table-cell">Эл. почта</th>
+                            <th>Роль</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr data-toggle="modal" data-target="#exampleModalEdit">
+                            <td>Ruby Mills</td>
+                            <td>ruby_mills@jti.com</td>
+                            <td>Только чтение</td>
+                        </tr>
+
+                        <tr data-toggle="modal" data-target="#exampleModalEdit">
+                            <td>Ramona Green</td>
+                            <td>ramona_green@jti.com</td>
+                            <td>Администратор</td>
+                        </tr>
+
+                        <div id="hideIfSearch">
+                            <tr data-toggle="modal" data-target="#exampleModalEdit">
+                                <td>Toni Ross</td>
+                                <td>toni_ross@jti.com</td>
+                                <td>Представитель региона</td>
+                            </tr>
+
+
+                            <tr data-toggle="modal" data-target="#exampleModalEdit">
+                                <td>Vicki Lucas</td>
+                                <td>vicki_lucas@jti.com</td>
+                                <td>Представитель региона</td>
+                            </tr>
+
+
+                            <tr data-toggle="modal" data-target="#exampleModalEdit">
+                                <td>Jerome Webb</td>
+                                <td>jerome_webb@jti.com</td>
+                                <td>Только чтение</td>
+                            </tr>
+                        </div>
+
+                    </tbody>
+                </table>
+
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1">Предыдущая страница</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">1</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">2</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">3</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">Следующая страница</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+    </main>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+        crossorigin="anonymous"></script>
+    <script>
+        $('#exampleModal').on('hidden.bs.modal', function (e) {
+            $("#success").fadeIn()
+        })
+    </script>
+</body>
+
+</html>

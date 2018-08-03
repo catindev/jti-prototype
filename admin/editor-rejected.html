@@ -42,9 +42,12 @@
                             <span class="sr-only">(current)</span>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Панель управления</a>
+                    </li>
                 </ul>
                 <form class="form-inline mt-2 mt-md-0">
-                    <button type="button" class="btn btn-link my-2 my-sm-0" style="color:#fff">Представительский П.</button>
+                    <button type="button" class="btn btn-link my-2 my-sm-0" style="color:#fff">Администраторский А.</button>
                     <span class="text-muted">|</span>
                     <a href="../index.html" class="btn btn-link my-2 my-sm-0">Выход</a>
                 </form>
@@ -78,7 +81,13 @@
             <div class="card-header">
                 <ul class="nav nav-tabs card-header-tabs">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Все планограммы</a>
+                        <a class="nav-link active" href="index.html">
+                            На утверждении
+                            <span class="badge badge-danger">2</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="all.html">Все планограммы</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="my.html">Мои планограммы</a>
@@ -95,28 +104,9 @@
                             <span class="badge badge-info">1</span>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="approve.html">
-                            На утверждении
-                            <span class="badge badge-danger">2</span>
-                        </a>
-                    </li>
                 </ul>
             </div>
             <div class="card-body">
-
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item">
-                            <a href="approve.html">
-                                На утверждении
-                            </a>
-                        </li>
-                        <li class="breadcrumb-item active" aria-current="page">
-                            JTI100Backwall__Мос.обл.__08-09.18
-                        </li>
-                    </ol>
-                </nav>
 
                 <div class="alert alert-warning" role="alert">
                     <h5 class="alert-heading">Возвращено с комментарием</h5>
@@ -192,8 +182,8 @@
 
             <div class="card " style="margin-top: 2rem; ">
                 <div class="card-body ">
-                    <a href="send-to-approve.html " class="btn btn-success " style="float: right;margin-left: 1rem; ">
-                        Сохранить и переотправить
+                    <a href="all.html" class="btn btn-success " style="float: right;margin-left: 1rem; ">
+                        Сохранить и одобрить
                     </a>
                 </div>
             </div>

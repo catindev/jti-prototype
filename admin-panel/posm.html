@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>JTI - Панель управления</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+        crossorigin="anonymous">
+
+    <style>
+        .alert {
+            display: none;
+        }
+
+        td img {
+            height: 100px;
+            margin: 0 auto;
+        }
+
+        th {
+            border: 0 !important;
+        }
+
+        .btn-sm {
+            margin-left: .5rem;
+        }
+
+        .container {
+            padding-top: 6rem;
+            padding-bottom: 4rem;
+        }
+
+        .table-hover tbody tr:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Добавить POSM</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="exampleFormControlFile1">Изображение</label>
+                            <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="nameen">Название на английском</label>
+                            <input type="text" class="form-control" id="nameen" aria-describedby="nameen" placeholder="CAMEL BLUE">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="nameru">Название на русском</label>
+                            <input type="text" class="form-control" id="nameru" aria-describedby="nameru" placeholder="КЭМЕЛ БЛЮ">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="brands">Бренд</label>
+                            <input type="text" class="form-control" id="brands" aria-describedby="brands" placeholder="Camel">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="family">Количество пачко-мест</label>
+                            <input type="text" class="form-control" id="family" aria-describedby="family" placeholder="2">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="code">Код</label>
+                            <input type="text" class="form-control" id="code" aria-describedby="code" placeholder="00000">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">Тип материала</label>
+                            <select class="form-control" id="exampleFormControlSelect1">
+                                <option></option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Добавить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="exampleModalEdit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabelEdit">Редактировать POSM</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <img src="images/p1.png" alt="" style="height: 150px;padding-bottom: 2rem">
+
+                        <div class="form-group">
+                            <label for="exampleFormControlFile1Edit">Другое изображение</label>
+                            <input type="file" class="form-control-file" id="exampleFormControlFile1Edit">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="nameenEdit">Название на английском</label>
+                            <input type="text" class="form-control" id="nameenEdit" aria-describedby="nameenEdit" value="State Line Navy 20's">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="nameruEdit">Название на русском</label>
+                            <input type="text" class="form-control" id="nameruEdit" aria-describedby="nameruEdit" value="Стейт Лайн Нэви">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="brandsEdit">Бренд</label>
+                            <input type="text" class="form-control" id="brandsEdit" aria-describedby="brandsEdit" value="State Line">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="familyEdit">Семья</label>
+                            <input type="text" class="form-control" id="familyEdit" aria-describedby="familyEdit" placeholder="State Line">
+                            <small class="form-text text-muted">Справочник семьи привязан к справочнику бренда</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="codeEdit">Код</label>
+                            <input type="text" class="form-control" id="codeEdit" aria-describedby="codeEdit" placeholder="12345">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Сохранить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" href="#">JTI</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Планограммы
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Панель управления
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                </ul>
+                <form class="form-inline mt-2 mt-md-0">
+                    <button type="button" class="btn btn-link my-2 my-sm-0" style="color:#fff">Администраторский А.</button>
+                    <span class="text-muted">|</span>
+                    <a href="../index.html" class="btn btn-link my-2 my-sm-0">Выход</a>
+                </form>
+            </div>
+        </nav>
+    </header>
+
+    <main role="main" class="container">
+        <div class="card">
+            <div class="card-header">
+                <ul class="nav nav-tabs card-header-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Пользователи</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="dictionaries.html">Справочники</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="packshots.html">Пэкшоты</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="new.html">POSM</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="card-body">
+
+                <div class="alert alert-success" role="alert" id="success">
+                    <i class="fas fa-star"></i>
+                    POSM добавлен
+                </div>
+
+                <div class="alert alert-danger" role="alert" id="danger">
+                    <i class="fas fa-star"></i>
+                    POSM удалён
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="Поиск" />
+                            </div>
+                            <div class="col">
+                                <a href="search.html" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="float: right;">
+                                    <i class="fas fa-star"></i>
+                                    Добавить POSM
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <table class="table table-condensed table-hover">
+                    <thead>
+                        <tr>
+                            <th>Изображение</th>
+                            <th>Бренд</th>
+                            <th>Код</th>
+                            <th>Количество пачко-мест</th>
+                            <th class="text-right d-none d-lg-table-cell">
+                                Действия
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr data-toggle="modal" data-target="#exampleModalEdit">
+                            <td>
+                                <img src="images/p1.png" alt="">
+                            </td>
+                            <td>State Line</td>
+                            <td>10203</td>
+                            <td>1</td>
+                            <td class="text-right d-none d-lg-table-cell">
+                                <a href="#" class="btn btn-sm btn-outline-secondary">
+                                    <i class="fas fa-pen-square"></i>
+                                </a>
+                                <button class="btn btn-sm btn-outline-danger">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <img src="images/p2.png" alt="">
+                            </td>
+                            <td>Sovereign</td>
+                            <td>10205</td>
+                            <td>2</td>
+                            <td class="text-right d-none d-lg-table-cell">
+                                <a href="#" class="btn btn-sm btn-outline-secondary">
+                                    <i class="fas fa-pen-square"></i>
+                                </a>
+                                <button class="btn btn-sm btn-outline-danger">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1">Предыдущая страница</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">1</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">2</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">3</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">Следующая страница</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+    </main>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+        crossorigin="anonymous"></script>
+    <script>
+        $('#exampleModal').on('hidden.bs.modal', function (e) {
+            $(".alert").hide()
+            $("#success").fadeIn()
+        })
+
+        $('.btn-outline-danger').click(function () {
+            if (confirm("Удалить POSM?") &&
+                confirm("POSM будет удалён. Вы уверены, что хотите сделать это?") &&
+                confirm("POSM будет удалён насовсем. Продолжить удаление?") &&
+                confirm("Восстановить POSM будет невозможно. Удаляем?")) {
+                $(".alert").hide()
+                $("#danger").fadeIn()
+            }
+        })
+
+
+        $("#brands").autocomplete({
+            source: [
+                "Camel",
+                "Glamour",
+                "LD",
+                "Mevius",
+                "More",
+                "Peter I",
+                "Russian Style",
+                "Sobranie"
+            ],
+            select: function (e, ui) {
+                // onChange
+            }
+        });
+    </script>
+</body>
+
+</html>

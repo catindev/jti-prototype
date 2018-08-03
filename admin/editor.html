@@ -14,6 +14,10 @@
             padding-bottom: 1.25rem;
         }
 
+        .alert {
+            display: none;
+        }
+
         .NSS {
             width: 100px;
             height: 110px;
@@ -21,7 +25,6 @@
             position: absolute;
             top: 85px;
             left: 20px;
-            background: url(images/state_nss.png);
         }
     </style>
 </head>
@@ -42,9 +45,12 @@
                             <span class="sr-only">(current)</span>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Панель управления</a>
+                    </li>
                 </ul>
                 <form class="form-inline mt-2 mt-md-0">
-                    <button type="button" class="btn btn-link my-2 my-sm-0" style="color:#fff">Представительский П.</button>
+                    <button type="button" class="btn btn-link my-2 my-sm-0" style="color:#fff">Администраторский А.</button>
                     <span class="text-muted">|</span>
                     <a href="../index.html" class="btn btn-link my-2 my-sm-0">Выход</a>
                 </form>
@@ -78,7 +84,13 @@
             <div class="card-header">
                 <ul class="nav nav-tabs card-header-tabs">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Все планограммы</a>
+                        <a class="nav-link" href="index.html">
+                            На утверждении
+                            <span class="badge badge-danger">2</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="all.html">Все планограммы</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="my.html">Мои планограммы</a>
@@ -87,7 +99,7 @@
                         <a class="nav-link" href="search.html">Поиск</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="new.html">Новая планограмма</a>
+                        <a class="nav-link active" href="new.html">Новая планограмма</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="drafts.html">
@@ -95,40 +107,14 @@
                             <span class="badge badge-info">1</span>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="approve.html">
-                            На утверждении
-                            <span class="badge badge-danger">2</span>
-                        </a>
-                    </li>
                 </ul>
             </div>
             <div class="card-body">
 
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item">
-                            <a href="approve.html">
-                                На утверждении
-                            </a>
-                        </li>
-                        <li class="breadcrumb-item active" aria-current="page">
-                            JTI100Backwall__Мос.обл.__08-09.18
-                        </li>
-                    </ol>
-                </nav>
-
-                <div class="alert alert-warning" role="alert">
-                    <h5 class="alert-heading">Возвращено с комментарием</h5>
-                    Переделать ...
-                    <hr>
-                    <strong>Администратор:</strong> Vicki Lucas
-                </div>
-
                 <div class="row" style="padding-top: 1.25rem;">
                     <div class="col-sm" style="padding: 0 1rem;">
                         <div class="NSS" data-toggle="modal" data-target="#exampleModal"></div>
-                        <img src="images/editor_state_glamour.png" alt="" style="display: block;" id="theSchema">
+                        <img src="images/editor_state_basic.png" alt="" style="display: block;" id="theSchema">
                     </div>
                     <div class="col-sm">
                         <div class="container" style="padding: .5rem 0;">
@@ -192,8 +178,19 @@
 
             <div class="card " style="margin-top: 2rem; ">
                 <div class="card-body ">
+                    <a href="new.html " class="btn btn-outline-secondary ">
+                        <i class="fas fa-long-arrow-alt-left "></i>
+                        Изменить выкладку
+                    </a>
+
+                    <a href="my.html" class="btn btn-outline-danger " id="revert " style="float: right;margin-left: 1rem; ">
+                        Отменить и закрыть
+                    </a>
                     <a href="send-to-approve.html " class="btn btn-success " style="float: right;margin-left: 1rem; ">
-                        Сохранить и переотправить
+                        Отправить На утверждении
+                    </a>
+                    <a href="drafts.html" class="btn btn-outline-primary " id="revert " style="float: right;margin-left: 1rem; ">
+                        Сохранить как черновик
                     </a>
                 </div>
             </div>
