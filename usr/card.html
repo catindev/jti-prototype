@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>JTI - Планограммы</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+        crossorigin="anonymous">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+        crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+        crossorigin="anonymous"></script>
+
+    <style>
+        fieldset {
+            padding-bottom: 1.25rem;
+        }
+
+        .ml-1 {
+            margin-left: 3rem;
+        }
+
+        .alert {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <!-- Fixed navbar -->
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" href="#">JTI</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Планограммы
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Панель управления</a>
+                    </li>
+                </ul>
+                <form class="form-inline mt-2 mt-md-0">
+                    <button type="button" class="btn btn-link my-2 my-sm-0" style="color:#fff">
+                        Пользовательский П.
+                    </button>
+                    <span class="text-muted">|</span>
+                    <a href="../index.html" class="btn btn-link my-2 my-sm-0">Выход</a>
+                </form>
+            </div>
+        </nav>
+    </header>
+
+    <main role="main" class="container" style="padding:6rem 0;">
+
+
+        <div class="card">
+            <div class="card-header">
+                <ul class="nav nav-tabs card-header-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            Мои планограммы
+                            <span class="badge badge-secondary">2</span>
+                            <span class="badge badge-success">10</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="approve.html">
+                            На утверждении
+                            <span class="badge badge-secondary">4</span>
+                            <span class="badge badge-danger">2</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="success.html">Утвержденные</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="search.html">Поиск</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="new.html">Новая планограмма</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-body">
+
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="index.html">
+                                <i class="fas fa-home"></i>
+                                Все планограммы
+                            </a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">
+                            JTI100Backwall__Мос.обл.__08-09.18
+                        </li>
+                    </ol>
+                </nav>
+
+                <div class="row" style="padding-top: 1.25rem;">
+                    <div class="col-sm" style="padding: 0 1rem;">
+                        <img src="planogram.png" alt="" style="display: block;margin: 0 auto;">
+                    </div>
+                    <div class="col-sm">
+
+                        <div class="card">
+                            <div class="card-body">
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" data-toggle="tab" href="#params">Параметры</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-toggle="tab" href="#history">История</a>
+                                    </li>
+                                </ul>
+
+                                <div class="tab-content">
+                                    <div id="params" class="container tab-pane active p-3">
+                                        <p>
+                                            <strong>Регион:</strong> Москва и МО
+                                        </p>
+                                        <p>
+                                            <strong>Портфельная территория:</strong> Мос.обл.
+                                        </p>
+                                        <p>
+                                            <strong>Тип оборудования:</strong> BW 120
+                                        </p>
+                                        <p>
+                                            <strong>Подтип оборудования:</strong> JTI 100 Backwall
+                                        </p>
+                                        <p>
+                                            <strong>Дата старта:</strong> 08.2018
+                                        </p>
+                                        <p>
+                                            <strong>Дата завершения:</strong> 09.2018
+                                        </p>
+                                        <p>
+                                            <strong>Статус:</strong> Активный
+                                        </p>
+                                        <p>
+                                            <strong>Создана:</strong> Ruby Mills
+                                        </p>
+                                        <p>
+                                            <strong>Дата создания:</strong> 2018/07/21 в 14:15
+                                        </p>
+                                        <p>
+                                            <strong>Статус согласования:</strong> На согласовании
+                                        </p>
+                                        <p>
+                                            <strong>Скрыта:</strong> Видимая
+                                        </p>
+                                    </div>
+                                    <div id="history" class="container tab-pane p-3 fade">
+                                        <table class="table table-condensed table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>Дата</th>
+                                                    <th>Автор</th>
+                                                    <th>Событие</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>2018/07/21 в 14:15</td>
+                                                    <td>Ruby Mills</td>
+                                                    <td>Создана</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2018/07/21 в 17:00</td>
+                                                    <td>Ruby Mills</td>
+                                                    <td>Отправлено на одобрение</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" style="margin-top: 2rem;">
+                    <div class="card-body">
+                        <form method="get" action="planogram.png">
+                            <button type="submit" class="btn btn-outline-success" style="float: right;">
+                                <i class="fas fa-download"></i>
+                                Скачать изображение планограммы
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+        crossorigin="anonymous"></script>
+    <script>
+        $("#goCopy").click(function () {
+            $(".alert").hide();
+            draftsCounter.innerText = 2
+            $("#success").fadeIn()
+        });
+    </script>
+</body>
+
+</html>

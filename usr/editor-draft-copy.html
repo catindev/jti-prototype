@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>JTI - Планограммы</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+
+    <style>
+        fieldset {
+            padding-bottom: 1.25rem;
+        }
+
+        .NSS {
+            width: 100px;
+            height: 110px;
+            background: grey;
+            position: absolute;
+            top: 85px;
+            left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" href="#">JTI</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Планограммы
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Панель управления</a>
+                    </li>
+                </ul>
+                <form class="form-inline mt-2 mt-md-0">
+                    <button type="button" class="btn btn-link my-2 my-sm-0" style="color:#fff">Пользовательский П.</button>
+                    <span class="text-muted">|</span>
+                    <a href="../index.html" class="btn btn-link my-2 my-sm-0">Выход</a>
+                </form>
+            </div>
+        </nav>
+    </header>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">NSS</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="images/nss_content.png" data-dismiss="modal" style="display: block;" id="nssContent">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <main role="main" class="container" style="padding-top: 6rem;padding-bottom: 4rem;">
+
+        <div class="card">
+            <div class="card-header">
+                <ul class="nav nav-tabs card-header-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            На утверждении
+                            <span class="badge badge-danger">2</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="all.html">Все планограммы</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="my.html">Мои планограммы</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="search.html">Поиск</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="new.html">Новая планограмма</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="drafts.html">
+                            Черновики
+                            <span class="badge badge-info">7</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-body">
+
+                <div class="alert alert-info" role="alert">
+                    Планограмма скопирована и сохранена в черновиках
+                </div>
+
+                <div class="row" style="padding-top: 1.25rem;">
+                    <div class="col-sm" style="padding: 0 1rem;">
+                        <div class="NSS" data-toggle="modal" data-target="#exampleModal"></div>
+                        <img src="images/editor_state_basic.png" alt="" style="display: block;" id="theSchema">
+                    </div>
+                    <div class="col-sm">
+                        <div class="container" style="padding: .5rem 0;">
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" data-toggle="tab" href="#packshots">Пэкшоты</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="tab" href="#posm">POSM</a>
+                                </li>
+                            </ul>
+
+                            <input class="form-control form-control" type="text" placeholder="Поиск" style="margin: 1rem 0;">
+
+                            <div class="tab-content">
+                                <div id="packshots" class="container tab-pane active" style="padding: 1rem 0;">
+
+                                    <div class="row">
+
+                                        <div class="col-sm">
+                                            <div class="tab-content">
+                                                <div id="Winston" class="container tab-pane active">
+                                                    <img src="images/winston.png" alt="">
+                                                </div>
+                                                <div id="Glamour" class="container tab-pane fade">
+                                                    <img src="images/glamour.png" alt="" id="gShots">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm">
+                                            <ul class="nav nav-pills flex-column">
+                                                <li class="nav-item">
+                                                    <a class="nav-link active" data-toggle="pill" href="#Winston">Winston</a>
+                                                </li>
+                                                <li class="nav-items">
+                                                    <a class="nav-link " data-toggle="pill" href="#Glamour">Glamour</a>
+                                                </li>
+                                                <li class="nav-items">
+                                                    <a class="nav-link " data-toggle="pill" href="#Glamour">Sovereign</a>
+                                                </li>
+                                                <li class="nav-items">
+                                                    <a class="nav-link " data-toggle="pill" href="#Glamour">LD</a>
+                                                </li>
+                                                <li class="nav-items">
+                                                    <a class="nav-link " data-toggle="pill" href="#Glamour">Camel</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div id="posm" class="container tab-pane fade">
+                                    <img src="images/posm.png" alt="" id="gPosm">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="card " style="margin-top: 2rem; ">
+                <div class="card-body ">
+                    <a href="new.html " class="btn btn-outline-secondary ">
+                        <i class="fas fa-long-arrow-alt-left "></i>
+                        Изменить выкладку
+                    </a>
+
+                    <a href="drafts.html" class="btn btn-outline-danger" style="float: right;margin-left: 1rem; ">
+                        Удалить
+                    </a>
+
+                    <a href="send-to-approve.html" class="btn btn-success " style="float: right;margin-left: 1rem; ">
+                        Отправить на утверждениe
+                    </a>
+
+                    <a href="drafts.html" class="btn btn-outline-primary" id="revert" style="float: right;margin-left: 1rem; ">
+                        Сохранить и закрыть
+                    </a>
+                </div>
+            </div>
+        </div>
+        </div>
+
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js "></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js "></script>
+
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js "></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js "></script>
+
+    <script>
+        var contentType = false;
+        $('#gShots').click(function () {
+            contentType = 'packshots'
+        });
+
+        $('#gPosm').click(function () {
+            contentType = 'posm'
+        });
+
+        // nssContent
+
+        $('#nssContent').click(function () {
+            $('.NSS').css('background', 'url(images/state_nss.png)');
+        });
+
+        $('#theSchema').click(function () {
+            contentType === 'packshots' && $('#theSchema').attr('src', 'images/editor_state_glamour.png');
+            contentType === 'posm' && $('#theSchema').attr('src', 'images/editor_state_posm.png');
+        });
+    </script>
+</body>
+
+</html>
