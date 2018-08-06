@@ -12,9 +12,12 @@
         crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
         crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="select.css">
+
     <style>
         .js-hidden {
-            display: none;
+            /* display: none; */
         }
 
         fieldset {
@@ -168,32 +171,36 @@
                             </fieldset>
 
                             <fieldset>
-                                <div class="form-group">
-                                    <label for="boxSelect">Тип торгового оборудования</label>
-                                    <!-- <select class="form-control" id="boxSelect" style="margin-bottom:.5rem;">
+                                <div class="form-group" style="margin-bottom:.5rem;">
+                                    <label for="deviceType">Тип торгового оборудования</label>
+                                    <select id="deviceType">
                                         <option></option>
                                         <option>Шкаф А</option>
                                         <option>Шкаф B</option>
                                         <option>Шкаф C</option>
-                                    </select> -->
-                                    <input type="text" class="form-control" id="tags" />
+                                    </select>
                                     <small class="form-text text-muted">Только активные шкафы</small>
                                 </div>
                             </fieldset>
 
                             <fieldset class="js-hidden" disabled>
-                                <div class="form-group">
-                                    <label for="testInput">Количество слотов в ряду</label>
-                                    <input type="text" class="form-control" id="testInput" value="10">
-                                </div>
-                                <div class="form-group">
-                                    <label for="testInput">Оптимальный портфель</label>
-                                    <input type="text" class="form-control" id="testInput" value="58">
-                                </div>
-                                <div class="form-group">
-                                    <label for="testInput8">NSS "Скворечник"</label>
-                                    <input type="text" class="form-control" id="testInput8" value="-8">
-                                </div>
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Кол-во слотов в ряду</th>
+                                            <th>Оптимальный портфель</th>
+                                            <th>NSS "Скворечник"</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        <tr>
+                                            <td>10</td>
+                                            <td>58</td>
+                                            <td>-8</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </fieldset>
 
                             <fieldset class="js-hidden">
@@ -234,22 +241,24 @@
                         <img src="box.png" alt="" style="display: block; margin: 2rem 0;">
 
                         <fieldset class="js-hidden" style="width: 80%;">
-                            <div class="form-group">
-                                <label for="brandInput1">Winston</label>
-                                <input type="text" class="form-control" id="brandInput1" value="9" disabled>
-                            </div>
-                            <div class="form-group">
-                                <label for="brandInput2">LD</label>
-                                <input type="text" class="form-control" id="brandInput2" value="5" disabled>
-                            </div>
-                            <div class="form-group">
-                                <label for="brandInput3">Peter I</label>
-                                <input type="text" class="form-control" id="brandInput3" value="3" disabled>
-                            </div>
-                            <div class="form-group">
-                                <label for="PremiumInput1">Glamour</label>
-                                <input type="text" class="form-control" id="PremiumInput1" value="3" disabled>
-                            </div>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Winston</th>
+                                        <th>LD</th>
+                                        <th>Peter I</th>
+                                        <th>Glamour</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>9</td>
+                                        <td>5</td>
+                                        <td>3</td>
+                                        <td>3</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </fieldset>
                     </div>
                 </div>
@@ -264,22 +273,11 @@
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
         crossorigin="anonymous"></script>
+
+    <script src="select.js"></script>
     <script>
-        $("#tags").change(function () { $(".js-hidden").show(); });
-
-        $(function () {
-            var availableTags = [
-                "Шкаф A",
-                "Шкаф B",
-                "Шкаф C",
-            ];
-
-            $("#tags").autocomplete({
-                source: availableTags,
-                select: function (e, ui) {
-                    $(".js-hidden").show();
-                }
-            });
+        $('#deviceType').selectize({
+            onChange: function (v) { $(".js-hidden").show(); }
         });
     </script>
 
