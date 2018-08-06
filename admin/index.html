@@ -233,10 +233,10 @@
         crossorigin="anonymous"></script>
 
     <script>
-        var rowsCol = 4;
         $(document).ready(function () {
             $('.table-hover tbody tr').click(function () {
-                $(this).attr('class') === 'table-warning' ?
+                var className = $(this).attr('class');
+                className.indexOf('table-warning') !== -1 ?
                     location.href = 'editor-rejected.html'
                     :
                     location.href = 'editor-approve.html'
