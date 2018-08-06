@@ -89,7 +89,7 @@
                             Утвердить
                         </a>
                         <a href="#" class="btn btn-sm btn-outline-danger">
-                            Вернуть авторам
+                            Отклонить c комментарием
                         </a>
 
                         <a href="search.html" class="btn btn-primary btn-sm" style="float: right;">
@@ -103,12 +103,13 @@
                     <table class="table table-hover table-condensed" style="width:100%" id="dataList">
                         <thead>
                             <tr>
-                                <th type="selector">
-                                    <input type="checkbox" />
+                                <th>
+                                    <input type="checkbox" onclick="onSelectAll().bind(this)" />
                                 </th>
                                 <th class="d-none d-lg-table-cell">Создана</th>
                                 <th>Название</th>
                                 <th>Статус</th>
+                                <th>Регион</th>
                                 <th class="text-right d-none d-lg-table-cell">
                                     Действия
                                 </th>
@@ -123,13 +124,11 @@
                                 <td class="d-none d-lg-table-cell">2018/07/21</td>
                                 <td>JTI100Backwall__Мос.обл__08-09.18</td>
                                 <td>На согласовании</td>
+                                <td>Москва и МО</td>
                                 <td class="text-right d-none d-lg-table-cell">
-                                    <a href="editor.html" class="btn btn-sm btn-outline-secondary">
+                                    <a href="editor-approve.html" class="btn btn-sm btn-outline-primary">
                                         <i class="fas fa-pen-square"></i>
                                     </a>
-                                    <button class="btn btn-sm btn-outline-primary">
-                                        <i class="fas fa-copy"></i>
-                                    </button>
                                 </td>
                             </tr>
 
@@ -140,13 +139,11 @@
                                 <td class="d-none d-lg-table-cell">2018/07/11</td>
                                 <td>JTI100Backwall__Мос.обл__08-09.18</td>
                                 <td>На согласовании</td>
+                                <td>Москва и МО</td>
                                 <td class="text-right d-none d-lg-table-cell">
-                                    <a href="editor.html" class="btn btn-sm btn-outline-secondary">
+                                    <a href="editor-approve.html" class="btn btn-sm btn-outline-primary">
                                         <i class="fas fa-pen-square"></i>
                                     </a>
-                                    <button class="btn btn-sm btn-outline-primary">
-                                        <i class="fas fa-copy"></i>
-                                    </button>
                                 </td>
                             </tr>
 
@@ -157,13 +154,11 @@
                                 <td class="d-none d-lg-table-cell">2018/07/1</td>
                                 <td>JTI120Backwall__Мос.обл__08-09.18</td>
                                 <td>Возвращена</td>
+                                <td>Москва и МО</td>
                                 <td class="text-right d-none d-lg-table-cell">
-                                    <a href="editor.html" class="btn btn-sm btn-outline-secondary">
+                                    <a href="editor-rejected.html" class="btn btn-sm btn-outline-primary">
                                         <i class="fas fa-pen-square"></i>
                                     </a>
-                                    <button class="btn btn-sm btn-outline-primary">
-                                        <i class="fas fa-copy"></i>
-                                    </button>
                                 </td>
                             </tr>
 
@@ -174,13 +169,11 @@
                                 <td class="d-none d-lg-table-cell">2018/07/21</td>
                                 <td>JTI100Backwall__Мос.обл__08-09.18</td>
                                 <td>На согласовании</td>
+                                <td>Москва и МО</td>
                                 <td class="text-right d-none d-lg-table-cell">
-                                    <a href="editor.html" class="btn btn-sm btn-outline-secondary">
+                                    <a href="editor-approve.html" class="btn btn-sm btn-outline-primary">
                                         <i class="fas fa-pen-square"></i>
                                     </a>
-                                    <button class="btn btn-sm btn-outline-primary">
-                                        <i class="fas fa-copy"></i>
-                                    </button>
                                 </td>
                             </tr>
 
@@ -191,13 +184,11 @@
                                 <td class="d-none d-lg-table-cell">2018/04/31</td>
                                 <td>JTI100BackwallNSS4-5__Мос.обл__08-09.18</td>
                                 <td>На согласовании</td>
+                                <td>Москва и МО</td>
                                 <td class="text-right d-none d-lg-table-cell">
-                                    <a href="editor.html" class="btn btn-sm btn-outline-secondary">
+                                    <a href="editor-approve.html" class="btn btn-sm btn-outline-primary">
                                         <i class="fas fa-pen-square"></i>
                                     </a>
-                                    <button class="btn btn-sm btn-outline-primary">
-                                        <i class="fas fa-copy"></i>
-                                    </button>
                                 </td>
                             </tr>
 
@@ -208,13 +199,11 @@
                                 <td class="d-none d-lg-table-cell">2018/07/05</td>
                                 <td>JTI100BackwallNSS4-5__Мос.обл__08-09.18</td>
                                 <td>Возвращена</td>
+                                <td>Москва и МО</td>
                                 <td class="text-right d-none d-lg-table-cell">
-                                    <a href="editor.html" class="btn btn-sm btn-outline-secondary">
+                                    <a href="editor-rejected.html" class="btn btn-sm btn-outline-primary">
                                         <i class="fas fa-pen-square"></i>
                                     </a>
-                                    <button class="btn btn-sm btn-outline-primary">
-                                        <i class="fas fa-copy"></i>
-                                    </button>
                                 </td>
                             </tr>
                         </tbody>
@@ -231,18 +220,6 @@
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
         crossorigin="anonymous"></script>
-
-    <script>
-        $(document).ready(function () {
-            $('.table-hover tbody tr').click(function () {
-                var className = $(this).attr('class');
-                className.indexOf('table-warning') !== -1 ?
-                    location.href = 'editor-rejected.html'
-                    :
-                    location.href = 'editor-approve.html'
-            });
-        });
-    </script>
 
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
