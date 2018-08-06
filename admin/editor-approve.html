@@ -77,6 +77,26 @@
         </div>
     </div>
 
+    <div class="modal fade" id="rejectModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="rejectModalLabel">Вернуть с комментарием</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <textarea class="form-control" name="" id="" cols="5" rows="5"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+                    <a href="index.html" class="btn btn-outline-primary">Сохранить и отправить</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <main role="main" class="container" style="padding-top: 6rem;padding-bottom: 4rem;">
 
@@ -84,7 +104,7 @@
             <div class="card-header">
                 <ul class="nav nav-tabs card-header-tabs">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">
+                        <a class="nav-link active" href="index.html">
                             На утверждении
                             <span class="badge badge-secondary">4</span>
                             <span class="badge badge-danger">2</span>
@@ -104,7 +124,7 @@
                         <a class="nav-link" href="search.html">Поиск</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="new.html">Новая планограмма</a>
+                        <a class="nav-link" href="new.html">Новая планограмма</a>
                     </li>
                 </ul>
             </div>
@@ -186,20 +206,12 @@
                         Изменить параметры
                     </a>
 
-                    <a href="#" class="btn btn-outline-danger " id="removeItem" style="float: right;margin-left: 1rem; ">
-                        Удалить
+                    <a href="#" class="btn btn-outline-danger " style="float: right;margin-left: 1rem; " data-toggle="modal" data-target="#rejectModal">
+                        Вернуть с комментарием
                     </a>
 
-                    <a href="send-to-approve.html " class="btn btn-success " style="float: right;margin-left: 1rem; ">
-                        Отправить на утверждение
-                    </a>
-
-                    <a href="#" class="btn btn-outline-primary" id="justSave" style="float: right;margin-left: 1rem; ">
-                        Сохранить
-                    </a>
-
-                    <a href="my.html" class="btn btn-outline-primary" style="float: right;margin-left: 1rem; ">
-                        Сохранить и выйти
+                    <a href="success.html" class="btn btn-success " style="float: right;margin-left: 1rem; ">
+                        Утвердить
                     </a>
                 </div>
             </div>

@@ -77,14 +77,19 @@
                     <li class="nav-item">
                         <a class="nav-link" href="index.html">
                             На утверждении
+                            <span class="badge badge-secondary">4</span>
                             <span class="badge badge-danger">2</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="all.html">Все планограммы</a>
+                        <a class="nav-link" href="success.html">Утвержденные</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="my.html">Мои планограммы</a>
+                        <a class="nav-link" href="my.html">
+                            Мои планограммы
+                            <span class="badge badge-secondary">2</span>
+                            <span class="badge badge-success">10</span>
+                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="search.html">Поиск</a>
@@ -92,41 +97,27 @@
                     <li class="nav-item">
                         <a class="nav-link" href="new.html">Новая планограмма</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="drafts.html">
-                            Черновики
-                            <span class="badge badge-info">1</span>
-                        </a>
-                    </li>
                 </ul>
             </div>
             <div class="card-body">
-
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item">
-                            <a href="index.html">
-                                <i class="fas fa-home"></i>
-                                Все планограммы
-                            </a>
-                        </li>
-                        <li class="breadcrumb-item active" aria-current="page">
-                            Результаты поиска
-                            <span class="badge badge-primary">3</span>
-                        </li>
-                    </ol>
-                </nav>
+                <h1 style="font-size: 1.25rem">Результаты поиска
+                    <span class="badge badge-primary">3</span>
+                </h1>
 
                 <div class="card">
                     <div class="card-body">
                         Действия с выбранными:
                         <a href="#" class="btn btn-outline-primary btn-sm">
                             <i class="fas fa-copy"></i>
-                            Скопировать в черновики
+                            Скопировать
                         </a>
                         <a href="#" class="btn btn-outline-primary btn-sm">
                             <i class="fas fa-download"></i>
-                            Скачать изображения планограмм
+                            Скачать
+                        </a>
+                        <a href="#" class="btn btn-outline-primary btn-sm">
+                            <i class="fas fa-plus-circle"></i>
+                            Объединить
                         </a>
 
                         <a href="search.html" class="btn btn-primary btn-sm" style="float: right;">
@@ -136,66 +127,79 @@
                     </div>
                 </div>
 
-                <table class="table table-condensed table-hover">
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th class="d-none d-lg-table-cell">Создана</th>
-                            <th class="d-none d-lg-table-cell">Автор</th>
-                            <th>Название</th>
-                            <th>Регион</th>
-                            <th class="text-right d-none d-lg-table-cell">Действия</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+                <div class="pt-3">
+                    <table class="table table-condensed table-hover" id="dataList">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <input type="checkbox" />
+                                </th>
+                                <th class="d-none d-lg-table-cell">Создана</th>
+                                <th class="d-none d-lg-table-cell">Автор</th>
+                                <th>Название</th>
+                                <th>Регион</th>
+                                <th class="text-right d-none d-lg-table-cell">Действия</th>
+                            </tr>
+                        </thead>
+                        <tbody>
 
-                        <tr>
-                            <td>
-                                <input type="checkbox" />
-                            </td>
-                            <td class="d-none d-lg-table-cell">2018/07/21</td>
-                            <td class="d-none d-lg-table-cell">Ruby Mills</td>
-                            <td>JTI100Backwall__Мос.обл.__07-09.18</td>
-                            <td>Москва и МО</td>
-                            <td class="text-right d-none d-lg-table-cell">
-                                <a href="planogram.png" class="btn btn-sm btn-outline-primary">
-                                    <i class="fas fa-download"></i>
-                                </a>
-                            </td>
-                        </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" />
+                                </td>
+                                <td class="d-none d-lg-table-cell">2018/07/21</td>
+                                <td class="d-none d-lg-table-cell">Ruby Mills</td>
+                                <td>JTI100Backwall__Мос.обл.__07-09.18</td>
+                                <td>Москва и МО</td>
+                                <td class="text-right d-none d-lg-table-cell">
+                                    <a href="#" class="btn btn-sm btn-outline-primary">
+                                        <i class="fas fa-copy"></i>
+                                    </a>
+                                    <a href="#" class="btn btn-sm btn-outline-primary">
+                                        <i class="fas fa-download"></i>
+                                    </a>
+                                </td>
+                            </tr>
 
-                        <tr>
-                            <td>
-                                <input type="checkbox" />
-                            </td>
-                            <td class="d-none d-lg-table-cell">2018/06/01</td>
-                            <td class="d-none d-lg-table-cell">Ruby Mills</td>
-                            <td>JTI100Backwall__Мос.обл.__06-07.18</td>
-                            <td>Москва и МО</td>
-                            <td class="text-right d-none d-lg-table-cell">
-                                <a href="planogram.png" class="btn btn-sm btn-outline-primary">
-                                    <i class="fas fa-download"></i>
-                                </a>
-                            </td>
-                        </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" />
+                                </td>
+                                <td class="d-none d-lg-table-cell">2018/06/01</td>
+                                <td class="d-none d-lg-table-cell">Ruby Mills</td>
+                                <td>JTI100Backwall__Мос.обл.__06-07.18</td>
+                                <td>Москва и МО</td>
+                                <td class="text-right d-none d-lg-table-cell">
+                                    <a href="#" class="btn btn-sm btn-outline-primary">
+                                        <i class="fas fa-copy"></i>
+                                    </a>
+                                    <a href="#" class="btn btn-sm btn-outline-primary">
+                                        <i class="fas fa-download"></i>
+                                    </a>
+                                </td>
+                            </tr>
 
-                        <tr class="table-success">
-                            <td>
-                                <input type="checkbox" />
-                            </td>
-                            <td class="d-none d-lg-table-cell">2018/06/18</td>
-                            <td class="d-none d-lg-table-cell">Ruby Mills</td>
-                            <td>JTI100Backwall__Мос.обл.__06-07.18</td>
-                            <td>Москва и МО</td>
-                            <td class="text-right d-none d-lg-table-cell">
-                                <a href="planogram.png" class="btn btn-sm btn-outline-primary">
-                                    <i class="fas fa-download"></i>
-                                </a>
-                            </td>
-                        </tr>
+                            <tr class="table-success">
+                                <td>
+                                    <input type="checkbox" />
+                                </td>
+                                <td class="d-none d-lg-table-cell">2018/06/18</td>
+                                <td class="d-none d-lg-table-cell">Ruby Mills</td>
+                                <td>JTI100Backwall__Мос.обл.__06-07.18</td>
+                                <td>Москва и МО</td>
+                                <td class="text-right d-none d-lg-table-cell">
+                                    <a href="#" class="btn btn-sm btn-outline-primary">
+                                        <i class="fas fa-copy"></i>
+                                    </a>
+                                    <a href="#" class="btn btn-sm btn-outline-primary">
+                                        <i class="fas fa-download"></i>
+                                    </a>
+                                </td>
+                            </tr>
 
-                    </tbody>
-                </table>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
 
@@ -211,6 +215,12 @@
             location.href = 'card.html'
         })
     </script>
+
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+    <script src="tables.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="tables.css">
 </body>
 
 </html>
