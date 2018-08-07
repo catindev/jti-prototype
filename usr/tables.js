@@ -47,3 +47,9 @@ $('#dataList').DataTable({
     },
     order: [[1, 'asc']]
 });
+
+function onSelectAll(e) {
+    console.log(this)
+    var flags = $('td input:checkbox', $('#dataList'));
+    flags.each(i => $(flags[i]).attr('checked', true))
+}
