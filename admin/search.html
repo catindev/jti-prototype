@@ -125,6 +125,16 @@
                             </select>
                             <small class="form-text text-muted">Только активные шкафы</small>
                         </div>
+
+                        <div class="form-group" style="margin-bottom:.5rem;">
+                            <label for="deviceType2">Подтип торгового оборудования</label>
+                            <select id="deviceType2">
+                                <option></option>
+                                <option>Подтип А</option>
+                                <option>Подтип B</option>
+                                <option>Подтип C</option>
+                            </select>
+                        </div>
                     </fieldset>
 
                     <fieldset>
@@ -140,27 +150,73 @@
                         </div>
                     </fieldset>
 
+
+                    <label for="">Период действия</label>
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Обычный</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Интервалы</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active pt-3 " id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="inputEmail4">Начало</label>
+                                    <input type="text" class="form-control" id="inputEmail4" placeholder="месяц">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="inputPassword4" style="visibility: hidden;">год</label>
+                                    <input type="text" class="form-control" id="inputPassword4" placeholder="год">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="inputEmail4">Завершение</label>
+                                    <input type="email" class="form-control" id="inputEmail4" placeholder="месяц">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="inputPassword4" style="visibility: hidden;">год</label>
+                                    <input type="password" class="form-control" id="inputPassword4" placeholder="год">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade pt-3" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                            <div class="form-row">
+                                <div class="form-group col-md-3">
+                                    <label for="inputEmail4">Начало</label>
+                                    <input type="text" class="form-control" id="inputEmail4" placeholder="До">
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="inputEmail4" style="visibility: hidden;">Начало действия</label>
+                                    <input type="text" class="form-control" id="inputEmail4" placeholder="После">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="inputPassword4" style="visibility: hidden;">год</label>
+                                    <input type="text" class="form-control" id="inputPassword4" placeholder="год">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-3">
+                                    <label for="inputEmail4">Начало</label>
+                                    <input type="text" class="form-control" id="inputEmail4" placeholder="До">
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="inputEmail4" style="visibility: hidden;">Начало действия</label>
+                                    <input type="text" class="form-control" id="inputEmail4" placeholder="После">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="inputPassword4" style="visibility: hidden;">год</label>
+                                    <input type="password" class="form-control" id="inputPassword4" placeholder="год">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <fieldset>
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="inputEmail4">Начало действия</label>
-                                <input type="text" class="form-control" id="inputEmail4" placeholder="месяц">
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="inputPassword4" style="visibility: hidden;">год</label>
-                                <input type="text" class="form-control" id="inputPassword4" placeholder="год">
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="inputEmail4">Завершение действия</label>
-                                <input type="email" class="form-control" id="inputEmail4" placeholder="месяц">
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="inputPassword4" style="visibility: hidden;">год</label>
-                                <input type="password" class="form-control" id="inputPassword4" placeholder="год">
-                            </div>
-                        </div>
+
                     </fieldset>
 
                     <fieldset>
@@ -214,6 +270,10 @@
     <script src="select.js"></script>
     <script>
         $('#deviceType').selectize({
+            onChange: function (v) { $(".js-hidden").show(); }
+        });
+
+        $('#deviceType2').selectize({
             onChange: function (v) { $(".js-hidden").show(); }
         });
     </script>

@@ -45,7 +45,8 @@ $('#dataList').DataTable({
         style: 'os',
         selector: 'td:first-child'
     },
-    order: [[1, 'asc']]
+    order: [[1, 'asc']],
+    bFilter: false, bInfo: false
 });
 
 function onSelectAll(e) {
