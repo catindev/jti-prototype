@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
         crossorigin="anonymous">
 
+    <link rel="stylesheet" href="select.css">
     <style>
         thead {
             border-bottom: 1px solid black !important;
@@ -41,8 +42,23 @@
             cursor: pointer;
         }
 
-        .actions {
-            width: 25%;
+        #searchCard:hover {
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+            transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+        }
+
+        .extended-search-link {
+            font-size: 16px;
+            outline: none;
+            text-decoration: none;
+            color: #0d53a5;
+            border-bottom: 1px dotted #0d53a5;
+            cursor: pointer;
+        }
+
+        .extended-search-link:hover {
+            color: #ed383a;
+            border-bottom: 1px dotted #ed383a;
         }
     </style>
 </head>
@@ -106,6 +122,85 @@
                 </ul>
             </div>
             <div class="card-body">
+
+
+                <!-- Локальный поиск -->
+                <div class="card" id="searchCard">
+                    <div class="card-body">
+                        <h5 class="card-title">Поиск</h5>
+
+                        <form>
+                            <div class="collapse" id="extendedSearch">
+
+                                <div class="form-row pt-3">
+                                    <div class="form-group col-md-6">
+                                        <label for="pCreated">Создана</label>
+                                        <input type="text" class="form-control" id="pCreated" placeholder="От">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="pCreatedEnd" style="visibility: hidden;">До</label>
+                                        <input type="text" class="form-control" id="pCreatedEnd" placeholder="До">
+                                    </div>
+                                </div>
+
+                                <fieldset class="pt-3 pb-3">
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="inputEmail4">Начало периода действия</label>
+                                            <input type="text" class="form-control" id="inputEmail4" placeholder="месяц">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="inputPassword4" style="visibility: hidden;">год</label>
+                                            <input type="text" class="form-control" id="inputPassword4" placeholder="год">
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="inputEmail4">Завершение</label>
+                                            <input type="email" class="form-control" id="inputEmail4" placeholder="месяц">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="inputPassword4" style="visibility: hidden;">год</label>
+                                            <input type="password" class="form-control" id="inputPassword4" placeholder="год">
+                                        </div>
+                                    </div>
+                                </fieldset>
+
+                            </div>
+
+                            <div class="row">
+                                <div class="col col-md-5">
+                                    <input type="text" class="form-control" id="searchQuery" style="padding: .34rem .75rem;">
+                                </div>
+                                <div class="col ">
+                                    <div class="form-group">
+                                        <!-- <label for="regionType">Регион</label> -->
+                                        <select id="regionType" placeholder="Регион">
+                                            <option></option>
+                                            <option>Север</option>
+                                            <option>Юг</option>
+                                            <option>Запад</option>
+                                            <option>Восток</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col pt-1 text-center">
+                                    <span class="extended-search-link" data-toggle="collapse" href="#extendedSearch" aria-controls="extendedSearch" aria-expanded="false">Расширенный поиск</span>
+                                </div>
+
+                                <div class="col text-right">
+                                    <button type="submit" class="btn btn-primary btn-block">
+                                        <i class="fas fa-search"></i>
+                                        Искать</button>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+
+                <div style="height: 1rem;;"></div>
 
                 <div class="card">
                     <div class="card-body">
@@ -460,10 +555,16 @@
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
         crossorigin="anonymous"></script>
+
+    <script src="select.js"></script>
     <script>
         $('.table-hover tbody tr').click(function () {
             // location.href = 'card.html'
-        })
+        });
+
+        $('#regionType').selectize({
+            onChange: function (v) { console.log('select changed') }
+        });
     </script>
 
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
