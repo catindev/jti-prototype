@@ -11,8 +11,14 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
         crossorigin="anonymous">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.css">
+
     <link rel="stylesheet" href="select.css">
     <style>
+        #selectAllBox {
+            cursor: pointer;
+        }
+
         thead {
             border-bottom: 1px solid black !important;
         }
@@ -48,7 +54,7 @@
         }
 
         .extended-search-link {
-            font-size: 16px;
+            font-size: 13px;
             outline: none;
             text-decoration: none;
             color: #0d53a5;
@@ -127,69 +133,142 @@
                 <!-- Локальный поиск -->
                 <div class="card" id="searchCard">
                     <div class="card-body">
-                        <h5 class="card-title">Поиск</h5>
+                        <h4 class="card-title">Поиск</h4>
 
                         <form>
-                            <div class="collapse" id="extendedSearch">
+                            <div class="collapse pb-3" id="extendedSearch">
 
-                                <div class="form-row pt-3">
-                                    <div class="form-group col-md-6">
-                                        <label for="pCreated">Создана</label>
-                                        <input type="text" class="form-control" id="pCreated" placeholder="От">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <label>Создана</label>
                                     </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="pCreatedEnd" style="visibility: hidden;">До</label>
-                                        <input type="text" class="form-control" id="pCreatedEnd" placeholder="До">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="">От</label>
+                                            <div class="input-group date mb-3">
+                                                <input type="text" class="form-control" id='datetimepicker1'>
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text" id="basic-addon2">
+                                                        <i class="far fa-calendar-alt"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="">До</label>
+                                            <div class="input-group date mb-3">
+                                                <input type="text" class="form-control" id='datetimepicker2'>
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text" id="basic-addon2">
+                                                        <i class="far fa-calendar-alt"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="col-md-12 pt-3">
+                                        <label>Период действия</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="">От</label>
+                                            <div class="input-group date mb-3">
+                                                <input type="text" class="form-control" id='datetimepicker3'>
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text" id="basic-addon2">
+                                                        <i class="far fa-calendar-alt"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="">До</label>
+                                            <div class="input-group date mb-3">
+                                                <input type="text" class="form-control" id='datetimepicker4'>
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text" id="basic-addon2">
+                                                        <i class="far fa-calendar-alt"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="">От</label>
+                                            <div class="input-group date mb-3">
+                                                <input type="text" class="form-control" id='datetimepicker5'>
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text" id="basic-addon2">
+                                                        <i class="far fa-calendar-alt"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="">До</label>
+                                            <div class="input-group date mb-3">
+                                                <input type="text" class="form-control" id='datetimepicker6'>
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text" id="basic-addon2">
+                                                        <i class="far fa-calendar-alt"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-
-                                <fieldset class="pt-3 pb-3">
-                                    <div class="form-row">
-                                        <div class="form-group col-md-6">
-                                            <label for="inputEmail4">Начало периода действия</label>
-                                            <input type="text" class="form-control" id="inputEmail4" placeholder="месяц">
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <label for="inputPassword4" style="visibility: hidden;">год</label>
-                                            <input type="text" class="form-control" id="inputPassword4" placeholder="год">
-                                        </div>
-                                    </div>
-                                    <div class="form-row">
-                                        <div class="form-group col-md-6">
-                                            <label for="inputEmail4">Завершение</label>
-                                            <input type="email" class="form-control" id="inputEmail4" placeholder="месяц">
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <label for="inputPassword4" style="visibility: hidden;">год</label>
-                                            <input type="password" class="form-control" id="inputPassword4" placeholder="год">
-                                        </div>
-                                    </div>
-                                </fieldset>
 
                             </div>
 
-                            <div class="row">
-                                <div class="col col-md-5">
-                                    <input type="text" class="form-control" id="searchQuery" style="padding: .34rem .75rem;">
+                            <div class="row pt-1">
+                                <div class="col col-md-4">
+                                    <input type="text" class="form-control" id="searchQuery" placeholder="Название" style="padding: .34rem .75rem;">
                                 </div>
-                                <div class="col ">
+                                <div class="col">
                                     <div class="form-group">
-                                        <!-- <label for="regionType">Регион</label> -->
-                                        <select id="regionType" placeholder="Регион">
-                                            <option></option>
-                                            <option>Север</option>
-                                            <option>Юг</option>
-                                            <option>Запад</option>
-                                            <option>Восток</option>
+                                        <select class="form-control" id="pStatus">
+                                            <option>Статус</option>
+                                            <option>Не важен</option>
+                                            <option>Черновик</option>
+                                            <option>Согласована</option>
+                                            </option>
                                         </select>
                                     </div>
                                 </div>
 
-                                <div class="col pt-1 text-center">
-                                    <span class="extended-search-link" data-toggle="collapse" href="#extendedSearch" aria-controls="extendedSearch" aria-expanded="false">Расширенный поиск</span>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <!-- <label for="regionType">Регион</label> -->
+                                        <select id="regionType" placeholder="Регион">
+                                            <option></option>
+                                            <option>Москва</option>
+                                            <option>Питер</option>
+                                            <option>Новосибирск</option>
+                                            <option>Другой</option>
+                                        </select>
+                                    </div>
                                 </div>
 
-                                <div class="col text-right">
+                                <div class="col text-center" style="padding-top: .25rem">
+                                    <span class="dropdown-toggle extended-search-link" data-toggle="collapse" href="#extendedSearch" aria-controls="extendedSearch"
+                                        aria-expanded="false">Расширенный поиск
+                                        <b class="caret"></b>
+                                    </span>
+                                </div>
+
+                                <div class="col text-right col-md-2">
                                     <button type="submit" class="btn btn-primary btn-block">
                                         <i class="fas fa-search"></i>
                                         Искать</button>
@@ -204,7 +283,8 @@
 
                 <div class="card">
                     <div class="card-body">
-                        Действия с выбранными:
+                        Действия с
+                        <strong>12</strong> выбранными:
                         <a href="#" class="btn btn-outline-primary btn-sm">
                             <i class="fas fa-download"></i>
                             Скачать изображения
@@ -213,10 +293,6 @@
                             <i class="fas fa-copy"></i>
                             Скопировать
                         </a>
-                        <!-- <a href="search.html" class="btn btn-primary btn-sm" style="float: right;">
-                            <i class="fas fa-search"></i>
-                            Расширенный поиск
-                        </a> -->
                     </div>
                 </div>
 
@@ -234,9 +310,9 @@
                         </colgroup>
                         <thead>
                             <tr>
-                                <th>
-                                    <label for="selectAll">
-                                        <input type="checkbox" id="selectAll" /> Все
+                                <th style="cursor: pointer; font-size: 14px;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                                    <label style="cursor: pointer;" class="mb-0" for="selectAll">
+                                        <input style="cursor: pointer;" type="checkbox" class="mr-1" id="selectAll" />
                                     </label>
                                 </th>
                                 <th class="d-none d-lg-table-cell">Создана</th>
@@ -556,6 +632,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
         crossorigin="anonymous"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.js" crossorigin="anonymous"></script>
+
     <script src="select.js"></script>
     <script>
         $('.table-hover tbody tr').click(function () {
@@ -565,7 +643,43 @@
         $('#regionType').selectize({
             onChange: function (v) { console.log('select changed') }
         });
+
+
+        (function ($) {
+            $.fn.datepicker.dates['ru'] = {
+                days: ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"],
+                daysShort: ["Вск", "Пнд", "Втр", "Срд", "Чтв", "Птн", "Суб"],
+                daysMin: ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
+                months: ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"],
+                monthsShort: ["Янв", "Фев", "Мар", "Апр", "Май", "Июн", "Июл", "Авг", "Сен", "Окт", "Ноя", "Дек"],
+                today: "Сегодня",
+                clear: "Очистить",
+                format: "dd.mm.yyyy",
+                weekStart: 1,
+                monthsTitle: 'Месяцы'
+            };
+        }(jQuery));
+
+        $('#datetimepicker1, #datetimepicker2').datepicker({
+            autoclose: true,
+            format: "dd/mm/yyyy",
+            language: 'ru'
+        });
+        $('#datetimepicker3, #datetimepicker4, #datetimepicker5, #datetimepicker6').datepicker({
+            autoclose: true,
+            format: "mm/yyyy",
+            startView: "months",
+            minViewMode: "months",
+            language: 'ru'
+        });
+
+
+        $('.btn-outline-danger').click(function () {
+            var isRemove = confirm("Хотите удалить планограмму TI100BackwallNSS4-5__Мос.обл?");
+        });
     </script>
+
+
 
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
