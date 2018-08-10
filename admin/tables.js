@@ -39,14 +39,16 @@ $('#dataList').DataTable({
     columnDefs: [{
         orderable: false,
         className: 'select-checkbox',
-        targets: 0
+        targets: [0, 7]
     }],
     select: {
         style: 'os',
         selector: 'td:first-child'
     },
     order: [[1, 'asc']],
-    bFilter: false, bInfo: false
+    bFilter: false, bInfo: false,
+
+    "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "все"]]
 });
 
 function onSelectAll(e) {

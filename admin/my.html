@@ -12,8 +12,20 @@
         crossorigin="anonymous">
 
     <style>
+        thead {
+            border-bottom: 1px solid black !important;
+        }
+
         th {
-            border: 0 !important;
+            /* border: 0 !important; */
+        }
+
+        tr {
+            font-size: 15px;
+        }
+
+        td {
+            vertical-align: middle !important;
         }
 
         .btn-sm {
@@ -27,6 +39,10 @@
 
         .table-hover tbody tr:hover {
             cursor: pointer;
+        }
+
+        .actions {
+            width: 25%;
         }
     </style>
 </head>
@@ -102,19 +118,31 @@
                             <i class="fas fa-copy"></i>
                             Скопировать
                         </a>
-                        <a href="search.html" class="btn btn-primary btn-sm" style="float: right;">
+                        <!-- <a href="search.html" class="btn btn-primary btn-sm" style="float: right;">
                             <i class="fas fa-search"></i>
                             Расширенный поиск
-                        </a>
+                        </a> -->
                     </div>
                 </div>
 
                 <div class="pt-3">
-                    <table class="table table-condensed table-hover" id="dataList">
+                    <table class="table table-sm table-condensed table-hover" id="dataList">
+                        <colgroup>
+                            <col style="width:10%">
+                            <col style="width:10%">
+                            <col style="width:30%">
+                            <col style="width:15%">
+                            <col>
+                            <col>
+                            <col>
+                            <col style="width:30%">
+                        </colgroup>
                         <thead>
                             <tr>
                                 <th>
-                                    <input type="checkbox" />
+                                    <label for="selectAll">
+                                        <input type="checkbox" id="selectAll" /> Все
+                                    </label>
                                 </th>
                                 <th class="d-none d-lg-table-cell">Создана</th>
                                 <th>Название</th>
@@ -127,36 +155,11 @@
                         </thead>
                         <tbody>
 
-                            <tr class="noclick">
-                                <td></td>
-                                <td style="width: 10%">
-                                    <input type="text" class="form-control form-control-sm" />
-                                </td>
-                                <td>
-                                    <input type="text" class="form-control form-control-sm" />
-                                </td>
-                                <td>
-                                    <input type="text" class="form-control form-control-sm" />
-                                </td>
-                                <td>
-                                    <input type="text" class="form-control form-control-sm" />
-                                </td>
-                                <td>
-                                    <input type="text" class="form-control form-control-sm" />
-                                </td>
-                                <td>
-                                    <input type="text" class="form-control form-control-sm" />
-                                </td>
-                                <td>
-
-                                </td>
-                            </tr>
-
                             <tr>
                                 <td>
                                     <input type="checkbox" />
                                 </td>
-                                <td class="d-none d-lg-table-cell">2018/07/21</td>
+                                <td>2018/07/21</td>
                                 <td>JTI100Backwall__Мос.обл.__07-09.18</td>
                                 <td>Москва и МО</td>
                                 <td>Согласована</td>
