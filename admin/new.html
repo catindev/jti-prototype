@@ -139,108 +139,124 @@
                 </ul>
             </div>
             <div class="card-body">
-                <h5 class="card-title"></h5>
+                <h3 class="card-title pb-2">Создать планограмму</h3>
+
+                <form style="max-width: 90%;margin: 0 auto;padding: 0 1rem 0 2rem;"></form>
+
+                <!-- Стартовая форма -->
                 <div class="row">
-                    <div class="col-sm">
-                        <form style="max-width: 90%;margin: 0 auto;padding: 1rem 0 2rem;">
-                            <fieldset>
-                                <div class="form-group">
-                                    <label for="exampleFormControlSelect1">Регион</label>
-                                    <select class="form-control" id="exampleFormControlSelect1">
-                                        <option></option>
-                                        <option>Север</option>
-                                        <option>Юг</option>
-                                        <option>Запад</option>
-                                        <option>Восток</option>
-                                    </select>
-                                </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">Регион</label>
+                            <select class="form-control" id="exampleFormControlSelect1">
+                                <option></option>
+                                <option>Москва</option>
+                                <option>Питер</option>
+                                <option>Новосибирск</option>
+                                <option>Другой</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="briefcaseTerritory">Портфельная территория</label>
+                            <select id="briefcaseTerritory">
+                                <option></option>
+                                <option>территория север 1</option>
+                                <option>территория север 2</option>
+                                <option>территория север 3</option>
+                            </select>
+                            <small id="passwordHelpBlock" class="form-text text-muted">
+                                Территории привязаны к регионам
+                            </small>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group" style="margin-bottom:.5rem;">
+                            <label for="deviceType">Тип торгового оборудования</label>
+                            <select id="deviceType">
+                                <option></option>
+                                <option>Шкаф А</option>
+                                <option>Шкаф B</option>
+                                <option>Шкаф C</option>
+                            </select>
+                            <small class="form-text text-muted">Только активные шкафы</small>
+                        </div>
+                    </div>
+                </div>
 
-                                <div class="form-group">
-                                    <label for="exampleFormControlSelect2">Портфельная территория</label>
-                                    <select class="form-control" id="exampleFormControlSelect2">
-                                        <option></option>
-                                        <option>территория север 1</option>
-                                        <option>территория север 2</option>
-                                        <option>территория север 3</option>
-                                    </select>
-                                    <small id="passwordHelpBlock" class="form-text text-muted">
-                                        Территории привязаны к регионам
-                                    </small>
-                                </div>
-                            </fieldset>
+                <div class="row pt-4">
+                    <div class=" col-sm ">
 
-                            <fieldset>
-                                <div class="form-group" style="margin-bottom:.5rem;">
-                                    <label for="deviceType">Тип торгового оборудования</label>
-                                    <select id="deviceType">
-                                        <option></option>
-                                        <option>Шкаф А</option>
-                                        <option>Шкаф B</option>
-                                        <option>Шкаф C</option>
-                                    </select>
-                                    <small class="form-text text-muted">Только активные шкафы</small>
-                                </div>
-                            </fieldset>
+                        <fieldset class="js-hidden ">
+                            <div class="form-group ">
+                                <label for="jtiRows ">Количество рядов (JTI)</label>
+                                <select class="form-control " id="jtiRows ">
+                                    <option></option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                    <option>6</option>
+                                    <option>7</option>
+                                    <option>8</option>
+                                    <option selected>9</option>
+                                    <option>10</option>
+                                </select>
+                            </div>
 
-                            <fieldset class="js-hidden" disabled>
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th>Кол-во слотов в ряду</th>
-                                            <th>Оптимальный портфель</th>
-                                            <th>NSS "Скворечник"</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
+                            <div class="form-group ">
+                                <label for="testInput4 ">Поддержка NSS</label>
+                                <input type="text " class="form-control " id="testInput4 " value="4 ">
+                                <small class="text-muted ">Количество слотов поддерживаемыми в NSS SKU</small>
+                            </div>
 
-                                        <tr>
-                                            <td>10</td>
-                                            <td>58</td>
-                                            <td>-8</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </fieldset>
+                            <div class="form-group ">
+                                <label for="testInput4 ">Резерв</label>
+                                <input type="text " class="form-control " id="testInput4 " value="4 ">
+                                <small class="text-muted ">Количество слотов под резервацию новых запусков</small>
+                            </div>
+                        </fieldset>
 
-                            <fieldset class="js-hidden">
-                                <div class="form-group">
-                                    <label for="testInput2">Количество рядов (JTI)</label>
-                                    <input type="text" class="form-control" id="testInput2" value="9">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="testInput3">Количество SKU в NSS</label>
-                                    <input type="text" class="form-control" id="testInput3" value="2">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="testInput4">Поддержка NSS</label>
-                                    <input type="text" class="form-control" id="testInput4" value="4">
-                                    <small class="text-muted">Количество слотов поддерживаемыми в NSS SKU</small>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="testInput4">Резерв</label>
-                                    <input type="text" class="form-control" id="testInput4" value="4">
-                                    <small class="text-muted">Количество слотов под резервацию новых запусков</small>
-                                </div>
-
-                                <div class="form-group row" style="padding-top:1rem;">
-                                    <label class="col-sm-2 col-form-label">Итого:</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" readonly class="form-control-plaintext text-muted" value="20">
-                                    </div>
-                                </div>
-                            </fieldset>
-
-                            <a href="editor.html" class="btn btn-primary">Cформировать планограмму</a>
+                        <a href="editor.html " class="btn btn-primary ">Cформировать планограмму</a>
                         </form>
                     </div>
-                    <div class="col-sm js-hidden" id="boxImage">
-                        <img src="box.png" alt="" style="display: block; margin: 2rem 0;">
 
-                        <fieldset class="js-hidden" style="width: 80%;">
-                            <table class="table">
+
+
+                    <div class="col-sm js-hidden " id="boxImage ">
+                        <img src=" box.png " alt=" " style="display: block; margin: 0; ">
+
+
+                        <fieldset class="js-hidden pt-3 " disabled>
+                            <table class="table table-sm ">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center">Всего слотов</th>
+                                        <th class="text-center">Оптимальный портфель</th>
+                                        <th class="text-center">NSS "Скворечник "</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    <tr>
+                                        <td class="text-right">100</td>
+                                        <td class="text-right">58</td>
+                                        <td class="text-right">-8</td>
+                                    </tr>
+
+                                    <tr style="font-size: 1.15rem; padding: 1.25rem;">
+                                        <th colspan="2" scope="row">Дополнительные места</th>
+                                        <td class="text-right">20</td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </fieldset>
+
+                        <fieldset class="js-hidden " style="">
+                            <table class="table table-sm ">
                                 <thead>
                                     <tr>
                                         <th>Winston</th>
@@ -266,17 +282,21 @@
 
     </main>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js "></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js " integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ "
+        crossorigin="anonymous "></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js " integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm "
+        crossorigin="anonymous "></script>
 
-    <script src="select.js"></script>
+    <script src="select.js "></script>
     <script>
         $('#deviceType').selectize({
-            onChange: function (v) { $(".js-hidden").show(); }
+            onChange: function (v) { $(".js-hidden ").show(); }
+        });
+
+        $('#briefcaseTerritory').selectize({
+            onChange: function (v) { }
         });
     </script>
 
