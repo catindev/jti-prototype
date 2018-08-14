@@ -15,7 +15,7 @@
         }
 
         .alert {
-            display: none;
+            /* display: none; */
         }
 
         .NSS {
@@ -110,8 +110,8 @@
             </div>
             <div class="card-body">
 
-                <div class="alert alert-success" role="alert" id="saved">
-                    Планограмма сохранена
+                <div class="alert alert-info" role="alert" id="saved">
+                    Планограмма сохранена в черновиках
                 </div>
 
                 <div class="row" style="padding-top: 1.25rem;">
@@ -186,21 +186,21 @@
                         Изменить параметры
                     </a>
 
-                    <a href="#" class="btn btn-outline-danger " id="removeItem" style="float: right;margin-left: 1rem; ">
+                    <a href="#" class="btn btn-outline-danger " id="removeItem" style="float: right;margin-left: 1rem;">
                         Удалить
                     </a>
 
-                    <a href="send-to-approve.html " class="btn btn-success " style="float: right;margin-left: 1rem; ">
-                        Отправить на утверждение
+                    <a href="send-to-approve.html " class="btn btn-success " style="float: right;margin-left: 1rem;">
+                        Настроить период действия
                     </a>
 
-                    <a href="#" class="btn btn-outline-primary" id="justSave" style="float: right;margin-left: 1rem; ">
+                    <!-- <a href="#" class="btn btn-outline-primary" id="justSave" style="float: right;margin-left: 1rem;">
                         Сохранить
                     </a>
 
-                    <a href="my.html" class="btn btn-outline-primary" style="float: right;margin-left: 1rem; ">
+                    <a href="my.html" class="btn btn-outline-primary" style="float: right;margin-left: 1rem;">
                         Сохранить и выйти
-                    </a>
+                    </a> -->
                 </div>
             </div>
         </div>
@@ -245,7 +245,6 @@
             $('.alert').hide();
             $('#saved').fadeIn();
         });
-
     </script>
 </body>
 

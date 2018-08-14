@@ -18,6 +18,8 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
         crossorigin="anonymous"></script>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.css">
+
     <style>
         th {
             border: 0 !important;
@@ -59,22 +61,25 @@
     </header>
 
     <main role="main" class="container" style="padding-top:6rem;">
-
-
         <div class="card">
             <div class="card-header">
                 <ul class="nav nav-tabs card-header-tabs">
                     <li class="nav-item">
                         <a class="nav-link" href="index.html">
                             На утверждении
+                            <span class="badge badge-secondary">4</span>
                             <span class="badge badge-danger">2</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="all.html">Все планограммы</a>
+                        <a class="nav-link" href="success.html">Утвержденные</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="my.html">Мои планограммы</a>
+                        <a class="nav-link" href="my.html">
+                            Мои планограммы
+                            <span class="badge badge-secondary">2</span>
+                            <span class="badge badge-success">10</span>
+                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="search.html">Поиск</a>
@@ -82,50 +87,55 @@
                     <li class="nav-item">
                         <a class="nav-link active" href="new.html">Новая планограмма</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="drafts.html">
-                            Черновики
-                            <span class="badge badge-info">1</span>
-                        </a>
-                    </li>
                 </ul>
             </div>
             <div class="card-body">
                 <form style="max-width: 70%;margin: 0 auto;padding: 1rem 0 2rem;">
 
                     <div style="padding-bottom: 2rem;">
-                        <h4>Настройте срок действия планограммы</h4>
+                        <h4>Настроить срок действия планограммы</h4>
                         <small class="text-muted">По умолчанию срок действия — текущий месяц</small>
                     </div>
 
-                    <fieldset>
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="input">Начало действия</label>
-                                <input type="text" class="form-control" id="input" value="июль">
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="input2" style="visibility: hidden;">год</label>
-                                <input type="text" class="form-control" id="input2" value="2018">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="">Начало</label>
+                                <div class="input-group date mb-3">
+                                    <input type="text" class="form-control" id='datetimepicker1' value="08/2018">
+                                </div>
                             </div>
                         </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="dffdfsfd">Завершение действия</label>
-                                <input type="text" class="form-control" id="dffdfsfd" value="август">
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="asdasdasd" style="visibility: hidden;">год</label>
-                                <input type="text" class="form-control" id="asdasdasd" value="2018">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="">Завершение</label>
+                                <div class="input-group date mb-3">
+                                    <input type="text" class="form-control" id='datetimepicker2' value="08/2018">
+                                </div>
                             </div>
                         </div>
-                    </fieldset>
-
-                    <a href="index.html" class="btn btn-primary">
-                        <i class="fas fa-calendar-check"></i>
-                        Отправить на согласование
-                    </a>
+                    </div>
                 </form>
+
+
+            </div>
+
+            <div class="card " style="margin-top: 2rem; ">
+                <div class="card-body ">
+                    <a href="editor.html " class="btn btn-outline-secondary ">
+                        <i class="fas fa-long-arrow-alt-left "></i>
+                        Вернуться в редактор
+                    </a>
+
+                    <a href="my.html" class="btn btn-outline-danger " id="removeItem" style="float: right;margin-left: 1rem;">
+                        Удалить
+                    </a>
+
+                    <a href="my.html" class="btn btn-success " style="float: right;margin-left: 1rem;">
+                        <i class="fas fa-calendar-check"></i>
+                        Согласовать
+                    </a>
+                </div>
             </div>
         </div>
 
@@ -141,6 +151,33 @@
     <!-- Bootstrap JS -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
         crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.js" crossorigin="anonymous"></script>
+
+    <script>
+        (function ($) {
+            $.fn.datepicker.dates['ru'] = {
+                days: ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"],
+                daysShort: ["Вск", "Пнд", "Втр", "Срд", "Чтв", "Птн", "Суб"],
+                daysMin: ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
+                months: ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"],
+                monthsShort: ["Янв", "Фев", "Мар", "Апр", "Май", "Июн", "Июл", "Авг", "Сен", "Окт", "Ноя", "Дек"],
+                today: "Сегодня",
+                clear: "Очистить",
+                format: "dd.mm.yyyy",
+                weekStart: 1,
+                monthsTitle: 'Месяцы'
+            };
+        }(jQuery));
+
+        $('#datetimepicker1, #datetimepicker2').datepicker({
+            autoclose: true,
+            format: "mm/yyyy",
+            startView: "months",
+            minViewMode: "months",
+            language: 'ru'
+        });
+    </script>
 </body>
 
 </html>
