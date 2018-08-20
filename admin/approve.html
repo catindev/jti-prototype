@@ -12,6 +12,10 @@
         crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.css">
     <link rel="stylesheet" href="select.css">
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="tables.css">
+
     <style>
         #selectAllBox {
             cursor: pointer;
@@ -104,7 +108,7 @@
                         <a class="nav-link" href="index.html">Новая планограмма</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">
+                        <a class="nav-link active" href="index.html">
                             На утверждении
                             <span class="badge badge-secondary" data-toggle="tooltip" title="На утверждении">4</span>
                             <span class="badge badge-danger" data-toggle="tooltip" title="Отклонено">2</span>
@@ -118,7 +122,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="success.html">Утвержденные</a>
+                        <a class="nav-link" href="success.html">Утвержденные</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="search.html">Поиск</a>
@@ -126,6 +130,7 @@
                 </ul>
             </div>
             <div class="card-body">
+
 
                 <!-- Локальный поиск -->
                 <div class="card" id="searchCard">
@@ -158,7 +163,6 @@
                                             </div>
                                         </div>
                                     </div>
-
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label for="">До</label>
@@ -191,7 +195,6 @@
                                             </div>
                                         </div>
                                     </div>
-
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label for="">До</label>
@@ -289,19 +292,16 @@
                     </div>
                 </div>
 
-                <div style="height: 1rem;;"></div>
+                <div style="height: 1rem;"></div>
 
                 <div class="card">
                     <div class="card-body">
-                        Действия с
-                        <strong>12</strong> выбранными:
-                        <a href="#" class="btn btn-outline-primary btn-sm">
-                            <i class="fas fa-download"></i>
-                            Скачать изображения
+                        Действия с выбранными:
+                        <a href="#" class="btn btn-sm btn-outline-success">
+                            Утвердить
                         </a>
-                        <a href="#" class="btn btn-sm btn-outline-primary" id="groupCopy">
-                            <i class="fas fa-copy"></i>
-                            Скопировать
+                        <a href="#" class="btn btn-sm btn-outline-danger">
+                            Отклонить c комментарием
                         </a>
                     </div>
                 </div>
@@ -313,10 +313,10 @@
                             <col style="width:10%">
                             <col style="width:30%">
                             <col style="width:15%">
+                            <col style="width:15%">
                             <col>
                             <col>
-                            <col>
-                            <col style="width:30%">
+                            <col style="width:10%">
                         </colgroup>
                         <thead>
                             <tr>
@@ -331,7 +331,7 @@
                                 <th>Статус</th>
                                 <th>Дата начала</th>
                                 <th>Дата окончания</th>
-                                <th>Действия</th>
+                                <th class="text-right">Действия</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -343,19 +343,13 @@
                                 <td>2018/07/21</td>
                                 <td>JTI100Backwall__Мос.обл.__07-09.18</td>
                                 <td>Москва и МО</td>
-                                <td>Согласована</td>
+                                <td>На согласовании</td>
                                 <td>2018/07/21</td>
                                 <td>2018/07/21</td>
                                 <td class="text-right d-none d-lg-table-cell">
-                                    <button class="btn btn-sm btn-outline-secondary" data-toggle="tooltip" title="Скрыть">
-                                        <i class="fas fa-eye-slash"></i>
-                                    </button>
-                                    <a href="#" class="btn btn-sm btn-outline-primary" data-toggle="tooltip" title="Скачать">
-                                        <i class="fas fa-download"></i>
+                                    <a href="card.html" class="btn btn-sm btn-outline-secondary" data-toggle="tooltip" title="Изменить">
+                                        <i class="fas fa-pen-square"></i>
                                     </a>
-                                    <button class="btn btn-sm btn-outline-primary" data-toggle="tooltip" title="Скопировать">
-                                        <i class="fas fa-copy"></i>
-                                    </button>
                                 </td>
                             </tr>
 
@@ -366,19 +360,13 @@
                                 <td class="d-none d-lg-table-cell">2018/07/11</td>
                                 <td>JTI100Backwall__Мос.обл.__08-09.18</td>
                                 <td>Москва и МО</td>
-                                <td>Согласована</td>
+                                <td>На согласовании</td>
                                 <td>2018/07/21</td>
                                 <td>2018/07/21</td>
                                 <td class="text-right d-none d-lg-table-cell">
-                                    <button class="btn btn-sm btn-outline-secondary" data-toggle="tooltip" title="Скрыть">
-                                        <i class="fas fa-eye-slash"></i>
-                                    </button>
-                                    <a href="#" class="btn btn-sm btn-outline-primary" data-toggle="tooltip" title="Скачать">
-                                        <i class="fas fa-download"></i>
+                                    <a href="card.html" class="btn btn-sm btn-outline-secondary" data-toggle="tooltip" title="Изменить">
+                                        <i class="fas fa-pen-square"></i>
                                     </a>
-                                    <button class="btn btn-sm btn-outline-primary" data-toggle="tooltip" title="Скопировать">
-                                        <i class="fas fa-copy"></i>
-                                    </button>
                                 </td>
                             </tr>
 
@@ -389,19 +377,13 @@
                                 <td class="d-none d-lg-table-cell">2018/07/1</td>
                                 <td>JTI120Backwall__Мос.обл.__08-09.18</td>
                                 <td>Москва и МО</td>
-                                <td>Согласована</td>
+                                <td>На согласовании</td>
                                 <td>2018/07/21</td>
                                 <td>2018/07/21</td>
                                 <td class="text-right d-none d-lg-table-cell">
-                                    <button class="btn btn-sm btn-outline-secondary" data-toggle="tooltip" title="Скрыть">
-                                        <i class="fas fa-eye-slash"></i>
-                                    </button>
-                                    <a href="#" class="btn btn-sm btn-outline-primary" data-toggle="tooltip" title="Скачать">
-                                        <i class="fas fa-download"></i>
+                                    <a href="card.html" class="btn btn-sm btn-outline-secondary" data-toggle="tooltip" title="Изменить">
+                                        <i class="fas fa-pen-square"></i>
                                     </a>
-                                    <button class="btn btn-sm btn-outline-primary" data-toggle="tooltip" title="Скопировать">
-                                        <i class="fas fa-copy"></i>
-                                    </button>
                                 </td>
                             </tr>
 
@@ -412,19 +394,13 @@
                                 <td class="d-none d-lg-table-cell">2018/07/21</td>
                                 <td>JTI100Backwall__Мос.обл.__07-09.18</td>
                                 <td>Москва и МО</td>
-                                <td>Согласована</td>
+                                <td>На согласовании</td>
                                 <td>2018/07/21</td>
                                 <td>2018/07/21</td>
                                 <td class="text-right d-none d-lg-table-cell">
-                                    <button class="btn btn-sm btn-outline-secondary" data-toggle="tooltip" title="Скрыть">
-                                        <i class="fas fa-eye-slash"></i>
-                                    </button>
-                                    <a href="#" class="btn btn-sm btn-outline-primary" data-toggle="tooltip" title="Скачать">
-                                        <i class="fas fa-download"></i>
+                                    <a href="card.html" class="btn btn-sm btn-outline-secondary" data-toggle="tooltip" title="Изменить">
+                                        <i class="fas fa-pen-square"></i>
                                     </a>
-                                    <button class="btn btn-sm btn-outline-primary" data-toggle="tooltip" title="Скопировать">
-                                        <i class="fas fa-copy"></i>
-                                    </button>
                                 </td>
                             </tr>
 
@@ -435,47 +411,35 @@
                                 <td class="d-none d-lg-table-cell">2018/07/13</td>
                                 <td>JTI120BackwallNSS3-4__Мос.обл.__08-09.18</td>
                                 <td>Москва и МО</td>
-                                <td>Согласована</td>
+                                <td>На согласовании</td>
                                 <td>2018/07/21</td>
                                 <td>2018/07/21</td>
                                 <td class="text-right d-none d-lg-table-cell">
-                                    <button class="btn btn-sm btn-outline-secondary" data-toggle="tooltip" title="Скрыть">
-                                        <i class="fas fa-eye-slash"></i>
-                                    </button>
-                                    <a href="#" class="btn btn-sm btn-outline-primary" data-toggle="tooltip" title="Скачать">
-                                        <i class="fas fa-download"></i>
+                                    <a href="card.html" class="btn btn-sm btn-outline-secondary" data-toggle="tooltip" title="Изменить">
+                                        <i class="fas fa-pen-square"></i>
                                     </a>
-                                    <button class="btn btn-sm btn-outline-primary" data-toggle="tooltip" title="Скопировать">
-                                        <i class="fas fa-copy"></i>
-                                    </button>
                                 </td>
 
                             </tr>
 
-                            <tr>
+                            <tr class="table-light">
                                 <td>
                                     <input type="checkbox" />
                                 </td>
                                 <td class="d-none d-lg-table-cell">2018/07/23</td>
                                 <td>JTI120Backwall__Мос.обл.__08-09.18</td>
                                 <td>Москва и МО</td>
-                                <td>Согласована</td>
+                                <td>На согласовании</td>
                                 <td>2018/07/21</td>
                                 <td>2018/07/21</td>
                                 <td class="text-right d-none d-lg-table-cell">
-                                    <button class="btn btn-sm btn-outline-secondary" data-toggle="tooltip" title="Скрыть">
-                                        <i class="fas fa-eye-slash"></i>
-                                    </button>
-                                    <a href="#" class="btn btn-sm btn-outline-primary" data-toggle="tooltip" title="Скачать">
-                                        <i class="fas fa-download"></i>
+                                    <a href="card.html" class="btn btn-sm btn-outline-secondary" data-toggle="tooltip" title="Изменить">
+                                        <i class="fas fa-pen-square"></i>
                                     </a>
-                                    <button class="btn btn-sm btn-outline-primary" data-toggle="tooltip" title="Скопировать">
-                                        <i class="fas fa-copy"></i>
-                                    </button>
                                 </td>
                             </tr>
 
-                            <tr>
+                            <tr class="table-warning">
                                 <td>
                                     <input type="checkbox" />
                                 </td>
@@ -484,19 +448,13 @@
                                     JTI100BackwallNSS4-5__Мос.обл
                                 </td>
                                 <td>Москва и МО</td>
-                                <td>Согласована</td>
+                                <td>Возвращена</td>
                                 <td>2018/07/21</td>
                                 <td>2018/07/21</td>
                                 <td class="text-right d-none d-lg-table-cell">
-                                    <button class="btn btn-sm btn-outline-secondary" data-toggle="tooltip" title="Скрыть">
-                                        <i class="fas fa-eye-slash"></i>
-                                    </button>
-                                    <a href="#" class="btn btn-sm btn-outline-primary" data-toggle="tooltip" title="Скачать">
-                                        <i class="fas fa-download"></i>
+                                    <a href="card.html" class="btn btn-sm btn-outline-secondary" data-toggle="tooltip" title="Изменить">
+                                        <i class="fas fa-pen-square"></i>
                                     </a>
-                                    <button class="btn btn-sm btn-outline-primary" data-toggle="tooltip" title="Скопировать">
-                                        <i class="fas fa-copy"></i>
-                                    </button>
                                 </td>
                             </tr>
 
@@ -508,18 +466,12 @@
                                 <td class="d-none d-lg-table-cell">2018/07/14</td>
                                 <td>JTI120Backwall__Мос.обл.__08-09.18</td>
                                 <td>Москва и МО</td>
-                                <td>Согласована</td>
+                                <td>На согласовании</td>
                                 <td>2018/07/21</td>
                                 <td>2018/07/21</td>
                                 <td class="text-right d-none d-lg-table-cell">
                                     <a href="card.html" class="btn btn-sm btn-outline-secondary" data-toggle="tooltip" title="Изменить">
                                         <i class="fas fa-pen-square"></i>
-                                    </a>
-                                    <button class="btn btn-sm btn-outline-primary" data-toggle="tooltip" title="Копировать">
-                                        <i class="fas fa-copy"></i>
-                                    </button>
-                                    <a href="planogram.png" target="_blank" class="btn btn-sm btn-outline-primary" data-toggle="tooltip" title="Скачать">
-                                        <i class="fas fa-download"></i>
                                     </a>
                                 </td>
                             </tr>
@@ -531,68 +483,51 @@
                                 <td class="d-none d-lg-table-cell">2018/07/1</td>
                                 <td>JTI100BackwallNSS4-5__Мос.обл.__07-08.18</td>
                                 <td>Москва и МО</td>
-                                <td>Согласована</td>
+                                <td>На согласовании</td>
                                 <td>2018/07/21</td>
                                 <td>2018/07/21</td>
                                 <td class="text-right d-none d-lg-table-cell">
-                                    <button class="btn btn-sm btn-outline-secondary" data-toggle="tooltip" title="Скрыть">
-                                        <i class="fas fa-eye-slash"></i>
-                                    </button>
-                                    <a href="#" class="btn btn-sm btn-outline-primary" data-toggle="tooltip" title="Скачать">
-                                        <i class="fas fa-download"></i>
+                                    <a href="card.html" class="btn btn-sm btn-outline-secondary" data-toggle="tooltip" title="Изменить">
+                                        <i class="fas fa-pen-square"></i>
                                     </a>
-                                    <button class="btn btn-sm btn-outline-primary" data-toggle="tooltip" title="Скопировать">
-                                        <i class="fas fa-copy"></i>
-                                    </button>
                                 </td>
                             </tr>
 
 
-                            <tr>
+                            <tr class="table-warning">
                                 <td>
                                     <input type="checkbox" />
                                 </td>
                                 <td class="d-none d-lg-table-cell">2018/07/05</td>
                                 <td>
+
                                     JTI100BackwallNSS4-5__Мос.обл
                                 </td>
                                 <td>Москва и МО</td>
-                                <td>Согласована</td>
+                                <td>Возвращена</td>
                                 <td>2018/07/21</td>
                                 <td>2018/07/21</td>
                                 <td class="text-right d-none d-lg-table-cell">
-                                    <button class="btn btn-sm btn-outline-secondary" data-toggle="tooltip" title="Скрыть">
-                                        <i class="fas fa-eye-slash"></i>
-                                    </button>
-                                    <a href="#" class="btn btn-sm btn-outline-primary" data-toggle="tooltip" title="Скачать">
-                                        <i class="fas fa-download"></i>
+                                    <a href="card.html" class="btn btn-sm btn-outline-secondary" data-toggle="tooltip" title="Изменить">
+                                        <i class="fas fa-pen-square"></i>
                                     </a>
-                                    <button class="btn btn-sm btn-outline-primary" data-toggle="tooltip" title="Скопировать">
-                                        <i class="fas fa-copy"></i>
-                                    </button>
                                 </td>
                             </tr>
 
-                            <tr>
+                            <tr class="table-light">
                                 <td>
                                     <input type="checkbox" />
                                 </td>
                                 <td class="d-none d-lg-table-cell">2018/07/05</td>
                                 <td>JTI120Backwall__Мос.обл.__08-09.18</td>
                                 <td>Москва и МО</td>
-                                <td>Согласована</td>
+                                <td>На согласовании</td>
                                 <td>2018/07/21</td>
                                 <td>2018/07/21</td>
                                 <td class="text-right d-none d-lg-table-cell">
-                                    <button class="btn btn-sm btn-outline-secondary" data-toggle="tooltip" title="Скрыть">
-                                        <i class="fas fa-eye-slash"></i>
-                                    </button>
-                                    <a href="#" class="btn btn-sm btn-outline-primary" data-toggle="tooltip" title="Скачать">
-                                        <i class="fas fa-download"></i>
+                                    <a href="card.html" class="btn btn-sm btn-outline-secondary" data-toggle="tooltip" title="Изменить">
+                                        <i class="fas fa-pen-square"></i>
                                     </a>
-                                    <button class="btn btn-sm btn-outline-primary" data-toggle="tooltip" title="Скопировать">
-                                        <i class="fas fa-copy"></i>
-                                    </button>
                                 </td>
                             </tr>
 
@@ -603,18 +538,12 @@
                                 <td class="d-none d-lg-table-cell">2018/07/01</td>
                                 <td>JTI120Backwall__Мос.обл.__08-09.18</td>
                                 <td>Москва и МО</td>
-                                <td>Согласована</td>
+                                <td>На согласовании</td>
                                 <td>2018/07/21</td>
                                 <td>2018/07/21</td>
                                 <td class="text-right d-none d-lg-table-cell">
                                     <a href="card.html" class="btn btn-sm btn-outline-secondary" data-toggle="tooltip" title="Изменить">
                                         <i class="fas fa-pen-square"></i>
-                                    </a>
-                                    <button class="btn btn-sm btn-outline-primary" data-toggle="tooltip" title="Копировать">
-                                        <i class="fas fa-copy"></i>
-                                    </button>
-                                    <a href="planogram.png" target="_blank" class="btn btn-sm btn-outline-primary" data-toggle="tooltip" title="Скачать">
-                                        <i class="fas fa-download"></i>
                                     </a>
                                 </td>
                             </tr>
@@ -632,9 +561,7 @@
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
         crossorigin="anonymous"></script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.js" crossorigin="anonymous"></script>
-
     <script src="select.js"></script>
     <script>
         $('.table-hover tbody tr').click(function () {
@@ -646,7 +573,6 @@
             persist: false,
             onChange: function (v) { console.log('select changed') }
         });
-
 
         (function ($) {
             $.fn.datepicker.dates['ru'] = {
@@ -684,21 +610,15 @@
         $('#groupCopy').click(function () {
             var is = confirm("Будет создано 20 новых планограмм. Продолжить?");
         });
+
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        });
     </script>
-
-
 
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
     <script src="tables.js"></script>
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
-    <link rel="stylesheet" href="tables.css">
-
-    <script>
-        $(function () {
-            $('[data-toggle="tooltip"]').tooltip()
-        })
-    </script>
 </body>
 
 </html>
