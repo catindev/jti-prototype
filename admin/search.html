@@ -92,53 +92,54 @@
                 <form style="max-width: 70%;margin: 0 auto;padding: 1rem 0 2rem;">
                     <h3>Поиск планограмм</h3>
                     <fieldset>
-                        <div class="form-group">
-                            <label for="exampleFormControlSelect1">Регион</label>
-                            <select class="form-control" id="exampleFormControlSelect1">
-                                <option></option>
-                                <option>Север</option>
-                                <option>Юг</option>
-                                <option>Запад</option>
-                                <option>Восток</option>
+                        <div class="form-group" style="width: 50%;">
+                            <label for="regionType">Регион</label>
+                            <select id="regionType" multiple>
+                                <option>Все</option>
+                                <option>Москва</option>
+                                <option>Питер</option>
+                                <option>Новосибирск</option>
+                                <option>Другой</option>
                             </select>
                         </div>
 
-                        <div class="form-group">
-                            <label for="exampleFormControlSelect2">Портфельная территория</label>
-                            <select class="form-control" id="exampleFormControlSelect2">
+                        <div class="form-group" style="width: 50%;">
+                            <label for="briefcaseTerritory">Портфельная территория</label>
+                            <select id="briefcaseTerritory" placeholder="Все">
                                 <option></option>
-                                <option>территория север 1</option>
-                                <option>территория север 2</option>
-                                <option>территория север 3</option>
+                                <option>Мос. обл.</option>
+                                <option>Другой</option>
                             </select>
+                            <small id="passwordHelpBlock" class="form-text text-muted">
+                                Территории привязаны к регионам
+                            </small>
                         </div>
                     </fieldset>
 
                     <fieldset>
-                        <div class="form-group" style="margin-bottom:.5rem;">
+                        <div class="form-group" style="margin-bottom: .5rem;width: 50%;">
                             <label for="deviceType">Тип торгового оборудования</label>
                             <select id="deviceType">
                                 <option></option>
-                                <option>Шкаф А</option>
-                                <option>Шкаф B</option>
-                                <option>Шкаф C</option>
+                                <option>BW 120</option>
+                                <option>Другой</option>
                             </select>
-                            <small class="form-text text-muted">Только активные шкафы</small>
                         </div>
 
-                        <div class="form-group" style="margin-bottom:.5rem;">
-                            <label for="deviceType2">Подтип торгового оборудования</label>
-                            <select id="deviceType2">
+                        <div class="form-group" style="margin-bottom:.5rem;width: 50%;">
+                            <label for="deviceType">Подтип торгового оборудования</label>
+                            <select id="deviceType">
                                 <option></option>
-                                <option>Подтип А</option>
-                                <option>Подтип B</option>
-                                <option>Подтип C</option>
+                                <option>JTI 120 Backwall</option>
+                                <option>JTI 120 Backwall (NSS 2-3 row)</option>
+                                <option>JTI 120 Backwall (NSS 3-4 row)</option>
+                                <option>JTI 120 Backwall (NSS 4-5 row)</option>
                             </select>
                         </div>
                     </fieldset>
 
                     <fieldset>
-                        <div class="form-group">
+                        <div class="form-group" style="width: 50%;">
                             <label for="exampleFormControlSelect2">Автор</label>
                             <select class="form-control" id="exampleFormControlSelect2" style="margin-bottom:.5rem;">
                                 <option></option>
@@ -150,66 +151,24 @@
                         </div>
                     </fieldset>
 
-
-                    <label for="">Период действия</label>
-                    <ul class="nav nav-tabs" id="myTab" role="tablist">
-                        <li class="nav-item">
-                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Обычный</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Интервалы</a>
-                        </li>
-                    </ul>
-                    <div class="tab-content" id="myTabContent">
-                        <div class="tab-pane fade show active pt-3 " id="home" role="tabpanel" aria-labelledby="home-tab">
-                            <div class="form-row">
-                                <div class="form-group col-md-6">
-                                    <label for="inputEmail4">Начало</label>
-                                    <input type="text" class="form-control" id="inputEmail4" placeholder="месяц">
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label for="inputPassword4" style="visibility: hidden;">год</label>
-                                    <input type="text" class="form-control" id="inputPassword4" placeholder="год">
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group col-md-6">
-                                    <label for="inputEmail4">Завершение</label>
-                                    <input type="email" class="form-control" id="inputEmail4" placeholder="месяц">
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label for="inputPassword4" style="visibility: hidden;">год</label>
-                                    <input type="password" class="form-control" id="inputPassword4" placeholder="год">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label>Период действия</label>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <small>Начало</small>
+                                <div class="input-group date mb-3">
+                                    <input type="text" class="form-control" id='datetimepicker1'>
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane fade pt-3" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                            <div class="form-row">
-                                <div class="form-group col-md-3">
-                                    <label for="inputEmail4">Начало</label>
-                                    <input type="text" class="form-control" id="inputEmail4" placeholder="До">
-                                </div>
-                                <div class="form-group col-md-3">
-                                    <label for="inputEmail4" style="visibility: hidden;">Начало действия</label>
-                                    <input type="text" class="form-control" id="inputEmail4" placeholder="После">
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label for="inputPassword4" style="visibility: hidden;">год</label>
-                                    <input type="text" class="form-control" id="inputPassword4" placeholder="год">
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group col-md-3">
-                                    <label for="inputEmail4">Начало</label>
-                                    <input type="text" class="form-control" id="inputEmail4" placeholder="До">
-                                </div>
-                                <div class="form-group col-md-3">
-                                    <label for="inputEmail4" style="visibility: hidden;">Начало действия</label>
-                                    <input type="text" class="form-control" id="inputEmail4" placeholder="После">
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label for="inputPassword4" style="visibility: hidden;">год</label>
-                                    <input type="password" class="form-control" id="inputPassword4" placeholder="год">
+
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <small>Завершение</small>
+                                <div class="input-group date mb-3">
+                                    <input type="text" class="form-control" id='datetimepicker2'>
                                 </div>
                             </div>
                         </div>
@@ -220,10 +179,10 @@
                     </fieldset>
 
                     <fieldset>
-                        <div class="form-group">
-                            <label for="exampleFormControlSelect2">Статус согласования</label>
-                            <select class="form-control" id="exampleFormControlSelect2" style="margin-bottom:.5rem;">
-                                <option>Не важен</option>
+                        <div class="form-group" style="width: 50%;">
+                            <label for="exampleFormControlSelect2">Статус</label>
+                            <select class="form-control" id="exampleFormControlSelect2" style="margin-bottom:.5rem;" placeholder="Все">
+                                <option>Все</option>
                                 <option>Черновик</option>
                                 <option>Согласована</option>
                                 <option>На согласовании</option>
@@ -252,8 +211,13 @@
                         </div>
                     </fieldset>
 
-                    <a href="index.html" class="btn btn-outline-primary" style="margin-right: 1rem;">Отменить и закрыть</a>
-                    <a href="search-results.html" class="btn btn-primary">Найти</a>
+                    <a href="index.html" class="btn btn-outline-primary" style="margin-right: 1rem;">← Отменить и закрыть</a>
+                    <a href="index.html" class="btn btn-outline-secondary" style="margin-right: 1rem;">
+                        <i class="fas fa-times"></i>
+                        Сбросить фильтры</a>
+                    <a href="search-results.html" style="float: right;" class="btn btn-primary">
+                        <i class="fas fa-search"></i>
+                        Найти</a>
                 </form>
             </div>
         </div>
@@ -261,20 +225,64 @@
     </main>
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
         crossorigin="anonymous"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.js" crossorigin="anonymous"></script>
+
     <script src="select.js"></script>
     <script>
-        $('#deviceType').selectize({
-            onChange: function (v) { $(".js-hidden").show(); }
+        $('.table-hover tbody tr').click(function () {
+            // location.href = 'card.html'
         });
 
-        $('#deviceType2').selectize({
-            onChange: function (v) { $(".js-hidden").show(); }
+        (function ($) {
+            $.fn.datepicker.dates['ru'] = {
+                days: ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"],
+                daysShort: ["Вск", "Пнд", "Втр", "Срд", "Чтв", "Птн", "Суб"],
+                daysMin: ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
+                months: ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"],
+                monthsShort: ["Янв", "Фев", "Мар", "Апр", "Май", "Июн", "Июл", "Авг", "Сен", "Окт", "Ноя", "Дек"],
+                today: "Сегодня",
+                clear: "Очистить",
+                format: "dd.mm.yyyy",
+                weekStart: 1,
+                monthsTitle: 'Месяцы'
+            };
+        }(jQuery));
+
+        $('#datetimepicker1, #datetimepicker2').datepicker({
+            autoclose: true,
+            format: "dd.mm.yyyy",
+            language: 'ru'
+        });
+        $('#datetimepicker3, #datetimepicker4, #datetimepicker5, #datetimepicker6').datepicker({
+            autoclose: true,
+            format: "mm.yyyy",
+            startView: "months",
+            minViewMode: "months",
+            language: 'ru'
+        });
+
+
+        $('.btn-outline-danger').click(function () {
+            var isRemove = confirm("Хотите удалить планограмму TI100BackwallNSS4-5__Мос.обл?");
+        });
+
+        $('#groupCopy').click(function () {
+            var is = confirm("Будет создано 20 новых планограмм. Продолжить?");
+        });
+
+        $('#deviceType, #briefcaseTerritory').selectize({
+            onChange: function (v) { $(".js-hidden ").show(); }
+        });
+
+        $('#regionType').selectize({
+            delimiter: ',',
+            persist: false,
+            onChange: function (v) { console.log('select changed') }
         });
     </script>
 

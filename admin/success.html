@@ -10,14 +10,31 @@
         crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
         crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="select.css">
     <style>
+        #selectAllBox {
+            cursor: pointer;
+        }
+
+        thead {
+            border-bottom: 1px solid black !important;
+        }
+
         th {
-            border: 0 !important;
+            /* border: 0 !important; */
+        }
+
+        tr {
+            font-size: 15px;
+        }
+
+        td {
+            vertical-align: middle !important;
         }
 
         .btn-sm {
-            margin-left: .5rem;
+            margin: .25rem;
         }
 
         .container {
@@ -27,6 +44,25 @@
 
         .table-hover tbody tr:hover {
             cursor: pointer;
+        }
+
+        #searchCard:hover {
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+            transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+        }
+
+        .extended-search-link {
+            font-size: 13px;
+            outline: none;
+            text-decoration: none;
+            color: #0d53a5;
+            border-bottom: 1px dotted #0d53a5;
+            cursor: pointer;
+        }
+
+        .extended-search-link:hover {
+            color: #ed383a;
+            border-bottom: 1px dotted #ed383a;
         }
     </style>
 </head>
@@ -91,20 +127,179 @@
             </div>
             <div class="card-body">
 
+                <!-- Локальный поиск -->
+                <div class="card" id="searchCard">
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            Поиск
+                            <button type="submit" class="btn btn-outline-secondary btn-sm" style="float: right;font-size: 12px;">
+                                <i class="fas fa-window-close"></i>
+                                Сбросить фильтры
+                            </button>
+                        </h4>
+
+                        <form>
+                            <div class="collapse pb-3" id="extendedSearch">
+
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <label>Создана</label>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="">От</label>
+                                            <div class="input-group date mb-3">
+                                                <input type="text" class="form-control" id='datetimepicker1'>
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text" id="basic-addon2">
+                                                        <i class="far fa-calendar-alt"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="">До</label>
+                                            <div class="input-group date mb-3">
+                                                <input type="text" class="form-control" id='datetimepicker2'>
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text" id="basic-addon2">
+                                                        <i class="far fa-calendar-alt"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-md-12 pt-4">
+                                        <label>Период действия</label>
+                                        <small class="text-muted">Дата начала действия планограммы</small>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="">От</label>
+                                            <div class="input-group date mb-3">
+                                                <input type="text" class="form-control" id='datetimepicker3'>
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text" id="basic-addon2">
+                                                        <i class="far fa-calendar-alt"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="">До</label>
+                                            <div class="input-group date mb-3">
+                                                <input type="text" class="form-control" id='datetimepicker4'>
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text" id="basic-addon2">
+                                                        <i class="far fa-calendar-alt"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12 pt-4">
+                                        <label>Период действия</label>
+                                        <small class="text-muted">Дата окончания действия планограммы</small>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="">От</label>
+                                            <div class="input-group date mb-3">
+                                                <input type="text" class="form-control" id='datetimepicker5'>
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text" id="basic-addon2">
+                                                        <i class="far fa-calendar-alt"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="">До</label>
+                                            <div class="input-group date mb-3">
+                                                <input type="text" class="form-control" id='datetimepicker6'>
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text" id="basic-addon2">
+                                                        <i class="far fa-calendar-alt"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="row pt-1">
+                                <div class="col col-md-3">
+                                    <label for="">Название</label>
+                                    <input type="text" class="form-control" id="searchQuery" placeholder="Введите текст" style="padding: .34rem .75rem;">
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="">Статус</label>
+                                        <select class="form-control" id="pStatus">
+                                            <option>Все</option>
+                                            <option>Черновик</option>
+                                            <option>Согласована</option>
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="regionType">Регион</label>
+                                        <select id="regionType" placeholder="Все" multiple>
+                                            <option></option>
+                                            <option>Москва</option>
+                                            <option>Питер</option>
+                                            <option>Новосибирск</option>
+                                            <option>Другой</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col text-center" style="padding-top: 2.25rem">
+                                    <span class="dropdown-toggle extended-search-link" data-toggle="collapse" href="#extendedSearch" aria-controls="extendedSearch"
+                                        aria-expanded="false">Расширенный поиск
+                                        <b class="caret"></b>
+                                    </span>
+                                </div>
+
+                                <div class="col text-right col-md-2" style="padding-top: 2rem">
+                                    <button type="submit" class="btn btn-primary btn-block">
+                                        <i class="fas fa-search"></i>
+                                        Искать</button>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+
+                <div style="height: 1rem;;"></div>
+
                 <div class="card">
                     <div class="card-body">
-                        Действия с выбранными:
+                        Действия с
+                        <strong>12</strong> выбранными:
                         <a href="#" class="btn btn-outline-primary btn-sm">
                             <i class="fas fa-download"></i>
                             Скачать изображения
                         </a>
-
-                        <a href="search.html" class="btn btn-primary btn-sm" style="float: right;">
-                            <i class="fas fa-search"></i>
-                            Расширенный поиск
-                        </a>
-
-                        <a href="#" class="btn btn-sm btn-outline-primary">
+                        <a href="#" class="btn btn-sm btn-outline-primary" id="groupCopy">
                             <i class="fas fa-copy"></i>
                             Скопировать
                         </a>
@@ -112,56 +307,53 @@
                 </div>
 
                 <div class="pt-3">
-                    <table class="table table-condensed table-hover" id="dataList">
+                    <table class="table table-sm table-condensed table-hover" id="dataList">
+                        <colgroup>
+                            <col style="width:5%">
+                            <col style="width:10%">
+                            <col style="width:30%">
+                            <col style="width:15%">
+                            <col>
+                            <col>
+                            <col>
+                            <col style="width:30%">
+                        </colgroup>
                         <thead>
                             <tr>
-                                <th>
-                                    <input type="checkbox" />
+                                <th style="cursor: pointer; font-size: 14px;">
+                                    <label style="cursor: pointer;" class="mb-0" for="selectAll">
+                                        <input style="cursor: pointer;" type="checkbox" class="mr-1" id="selectAll" />
+                                    </label>
                                 </th>
-                                <th class="d-none d-lg-table-cell">Создана</th>
-                                <th class="d-none d-lg-table-cell">Автор</th>
+                                <th>Создана</th>
                                 <th>Название</th>
                                 <th>Регион</th>
-                                <th class="text-right d-none d-lg-table-cell">Действия</th>
+                                <th>Статус</th>
+                                <th>Дата начала</th>
+                                <th>Дата окончания</th>
+                                <th>Действия</th>
                             </tr>
                         </thead>
                         <tbody>
 
-                            <tr class="noclick">
-                                <td></td>
-                                <td style="width: 10%">
-                                    <input type="text" class="form-control form-control-sm" />
-                                </td>
-                                <td>
-                                    <input type="text" class="form-control form-control-sm" />
-                                </td>
-                                <td>
-                                    <input type="text" class="form-control form-control-sm" />
-                                </td>
-                                <td>
-                                    <input type="text" class="form-control form-control-sm" />
-                                </td>
-                                <td>
-
-                                </td>
-                            </tr>
-
                             <tr>
                                 <td>
                                     <input type="checkbox" />
                                 </td>
-                                <td class="d-none d-lg-table-cell">2018/07/21</td>
-                                <td class="d-none d-lg-table-cell">Ruby Mills</td>
+                                <td>2018/07/21</td>
                                 <td>JTI100Backwall__Мос.обл.__07-09.18</td>
                                 <td>Москва и МО</td>
+                                <td>Согласована</td>
+                                <td>2018/07/21</td>
+                                <td>2018/07/21</td>
                                 <td class="text-right d-none d-lg-table-cell">
-                                    <button class="btn btn-sm btn-outline-secondary">
+                                    <button class="btn btn-sm btn-outline-secondary" data-toggle="tooltip" title="Скрыть">
                                         <i class="fas fa-eye-slash"></i>
                                     </button>
-                                    <a href="#" class="btn btn-sm btn-outline-primary">
+                                    <a href="#" class="btn btn-sm btn-outline-primary" data-toggle="tooltip" title="Скачать">
                                         <i class="fas fa-download"></i>
                                     </a>
-                                    <button class="btn btn-sm btn-outline-primary">
+                                    <button class="btn btn-sm btn-outline-primary" data-toggle="tooltip" title="Скопировать">
                                         <i class="fas fa-copy"></i>
                                     </button>
                                 </td>
@@ -172,17 +364,19 @@
                                     <input type="checkbox" />
                                 </td>
                                 <td class="d-none d-lg-table-cell">2018/07/11</td>
-                                <td class="d-none d-lg-table-cell">Ramona Green</td>
                                 <td>JTI100Backwall__Мос.обл.__08-09.18</td>
                                 <td>Москва и МО</td>
+                                <td>Согласована</td>
+                                <td>2018/07/21</td>
+                                <td>2018/07/21</td>
                                 <td class="text-right d-none d-lg-table-cell">
-                                    <button class="btn btn-sm btn-outline-secondary">
+                                    <button class="btn btn-sm btn-outline-secondary" data-toggle="tooltip" title="Скрыть">
                                         <i class="fas fa-eye-slash"></i>
                                     </button>
-                                    <a href="#" class="btn btn-sm btn-outline-primary">
+                                    <a href="#" class="btn btn-sm btn-outline-primary" data-toggle="tooltip" title="Скачать">
                                         <i class="fas fa-download"></i>
                                     </a>
-                                    <button class="btn btn-sm btn-outline-primary">
+                                    <button class="btn btn-sm btn-outline-primary" data-toggle="tooltip" title="Скопировать">
                                         <i class="fas fa-copy"></i>
                                     </button>
                                 </td>
@@ -193,17 +387,19 @@
                                     <input type="checkbox" />
                                 </td>
                                 <td class="d-none d-lg-table-cell">2018/07/1</td>
-                                <td class="d-none d-lg-table-cell">Toni Ross</td>
                                 <td>JTI120Backwall__Мос.обл.__08-09.18</td>
                                 <td>Москва и МО</td>
+                                <td>Согласована</td>
+                                <td>2018/07/21</td>
+                                <td>2018/07/21</td>
                                 <td class="text-right d-none d-lg-table-cell">
-                                    <button class="btn btn-sm btn-outline-secondary">
+                                    <button class="btn btn-sm btn-outline-secondary" data-toggle="tooltip" title="Скрыть">
                                         <i class="fas fa-eye-slash"></i>
                                     </button>
-                                    <a href="#" class="btn btn-sm btn-outline-primary">
+                                    <a href="#" class="btn btn-sm btn-outline-primary" data-toggle="tooltip" title="Скачать">
                                         <i class="fas fa-download"></i>
                                     </a>
-                                    <button class="btn btn-sm btn-outline-primary">
+                                    <button class="btn btn-sm btn-outline-primary" data-toggle="tooltip" title="Скопировать">
                                         <i class="fas fa-copy"></i>
                                     </button>
                                 </td>
@@ -214,17 +410,19 @@
                                     <input type="checkbox" />
                                 </td>
                                 <td class="d-none d-lg-table-cell">2018/07/21</td>
-                                <td class="d-none d-lg-table-cell">Ruby Mills</td>
                                 <td>JTI100Backwall__Мос.обл.__07-09.18</td>
                                 <td>Москва и МО</td>
+                                <td>Согласована</td>
+                                <td>2018/07/21</td>
+                                <td>2018/07/21</td>
                                 <td class="text-right d-none d-lg-table-cell">
-                                    <button class="btn btn-sm btn-outline-secondary">
+                                    <button class="btn btn-sm btn-outline-secondary" data-toggle="tooltip" title="Скрыть">
                                         <i class="fas fa-eye-slash"></i>
                                     </button>
-                                    <a href="#" class="btn btn-sm btn-outline-primary">
+                                    <a href="#" class="btn btn-sm btn-outline-primary" data-toggle="tooltip" title="Скачать">
                                         <i class="fas fa-download"></i>
                                     </a>
-                                    <button class="btn btn-sm btn-outline-primary">
+                                    <button class="btn btn-sm btn-outline-primary" data-toggle="tooltip" title="Скопировать">
                                         <i class="fas fa-copy"></i>
                                     </button>
                                 </td>
@@ -235,38 +433,45 @@
                                     <input type="checkbox" />
                                 </td>
                                 <td class="d-none d-lg-table-cell">2018/07/13</td>
-                                <td class="d-none d-lg-table-cell">Vicki Lucas</td>
                                 <td>JTI120BackwallNSS3-4__Мос.обл.__08-09.18</td>
                                 <td>Москва и МО</td>
+                                <td>Согласована</td>
+                                <td>2018/07/21</td>
+                                <td>2018/07/21</td>
                                 <td class="text-right d-none d-lg-table-cell">
-                                    <button class="btn btn-sm btn-outline-secondary">
+                                    <button class="btn btn-sm btn-outline-secondary" data-toggle="tooltip" title="Скрыть">
                                         <i class="fas fa-eye-slash"></i>
                                     </button>
-                                    <a href="#" class="btn btn-sm btn-outline-primary">
+                                    <a href="#" class="btn btn-sm btn-outline-primary" data-toggle="tooltip" title="Скачать">
                                         <i class="fas fa-download"></i>
                                     </a>
-                                    <button class="btn btn-sm btn-outline-primary">
+                                    <button class="btn btn-sm btn-outline-primary" data-toggle="tooltip" title="Скопировать">
                                         <i class="fas fa-copy"></i>
                                     </button>
                                 </td>
 
                             </tr>
 
-                            <tr class="table-light">
+                            <tr>
                                 <td>
                                     <input type="checkbox" />
                                 </td>
                                 <td class="d-none d-lg-table-cell">2018/07/23</td>
-                                <td class="d-none d-lg-table-cell">Jerome Webb</td>
                                 <td>JTI120Backwall__Мос.обл.__08-09.18</td>
                                 <td>Москва и МО</td>
+                                <td>Согласована</td>
+                                <td>2018/07/21</td>
+                                <td>2018/07/21</td>
                                 <td class="text-right d-none d-lg-table-cell">
-                                    <button class="btn btn-sm btn-outline-secondary">
-                                        <i class="fas fa-eye"></i>
+                                    <button class="btn btn-sm btn-outline-secondary" data-toggle="tooltip" title="Скрыть">
+                                        <i class="fas fa-eye-slash"></i>
                                     </button>
-                                    <a href="planogram.png" target="_blank" class="btn btn-sm btn-outline-primary">
+                                    <a href="#" class="btn btn-sm btn-outline-primary" data-toggle="tooltip" title="Скачать">
                                         <i class="fas fa-download"></i>
                                     </a>
+                                    <button class="btn btn-sm btn-outline-primary" data-toggle="tooltip" title="Скопировать">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
                                 </td>
                             </tr>
 
@@ -275,20 +480,21 @@
                                     <input type="checkbox" />
                                 </td>
                                 <td class="d-none d-lg-table-cell">2018/04/31</td>
-                                <td class="d-none d-lg-table-cell">Mattie Lynch</td>
                                 <td>
-
                                     JTI100BackwallNSS4-5__Мос.обл
                                 </td>
                                 <td>Москва и МО</td>
+                                <td>Согласована</td>
+                                <td>2018/07/21</td>
+                                <td>2018/07/21</td>
                                 <td class="text-right d-none d-lg-table-cell">
-                                    <button class="btn btn-sm btn-outline-secondary">
+                                    <button class="btn btn-sm btn-outline-secondary" data-toggle="tooltip" title="Скрыть">
                                         <i class="fas fa-eye-slash"></i>
                                     </button>
-                                    <a href="#" class="btn btn-sm btn-outline-primary">
+                                    <a href="#" class="btn btn-sm btn-outline-primary" data-toggle="tooltip" title="Скачать">
                                         <i class="fas fa-download"></i>
                                     </a>
-                                    <button class="btn btn-sm btn-outline-primary">
+                                    <button class="btn btn-sm btn-outline-primary" data-toggle="tooltip" title="Скопировать">
                                         <i class="fas fa-copy"></i>
                                     </button>
                                 </td>
@@ -300,19 +506,21 @@
                                     <input type="checkbox" />
                                 </td>
                                 <td class="d-none d-lg-table-cell">2018/07/14</td>
-                                <td class="d-none d-lg-table-cell">Claire Sullivan</td>
                                 <td>JTI120Backwall__Мос.обл.__08-09.18</td>
                                 <td>Москва и МО</td>
+                                <td>Согласована</td>
+                                <td>2018/07/21</td>
+                                <td>2018/07/21</td>
                                 <td class="text-right d-none d-lg-table-cell">
-                                    <button class="btn btn-sm btn-outline-secondary">
-                                        <i class="fas fa-eye-slash"></i>
-                                    </button>
-                                    <a href="#" class="btn btn-sm btn-outline-primary">
-                                        <i class="fas fa-download"></i>
+                                    <a href="card.html" class="btn btn-sm btn-outline-secondary" data-toggle="tooltip" title="Изменить">
+                                        <i class="fas fa-pen-square"></i>
                                     </a>
-                                    <button class="btn btn-sm btn-outline-primary">
+                                    <button class="btn btn-sm btn-outline-primary" data-toggle="tooltip" title="Копировать">
                                         <i class="fas fa-copy"></i>
                                     </button>
+                                    <a href="planogram.png" target="_blank" class="btn btn-sm btn-outline-primary" data-toggle="tooltip" title="Скачать">
+                                        <i class="fas fa-download"></i>
+                                    </a>
                                 </td>
                             </tr>
 
@@ -321,17 +529,19 @@
                                     <input type="checkbox" />
                                 </td>
                                 <td class="d-none d-lg-table-cell">2018/07/1</td>
-                                <td class="d-none d-lg-table-cell">Scott Gonzalez</td>
                                 <td>JTI100BackwallNSS4-5__Мос.обл.__07-08.18</td>
                                 <td>Москва и МО</td>
+                                <td>Согласована</td>
+                                <td>2018/07/21</td>
+                                <td>2018/07/21</td>
                                 <td class="text-right d-none d-lg-table-cell">
-                                    <button class="btn btn-sm btn-outline-secondary">
+                                    <button class="btn btn-sm btn-outline-secondary" data-toggle="tooltip" title="Скрыть">
                                         <i class="fas fa-eye-slash"></i>
                                     </button>
-                                    <a href="#" class="btn btn-sm btn-outline-primary">
+                                    <a href="#" class="btn btn-sm btn-outline-primary" data-toggle="tooltip" title="Скачать">
                                         <i class="fas fa-download"></i>
                                     </a>
-                                    <button class="btn btn-sm btn-outline-primary">
+                                    <button class="btn btn-sm btn-outline-primary" data-toggle="tooltip" title="Скопировать">
                                         <i class="fas fa-copy"></i>
                                     </button>
                                 </td>
@@ -343,41 +553,44 @@
                                     <input type="checkbox" />
                                 </td>
                                 <td class="d-none d-lg-table-cell">2018/07/05</td>
-                                <td class="d-none d-lg-table-cell">Scarlett Andrews</td>
                                 <td>
-
                                     JTI100BackwallNSS4-5__Мос.обл
                                 </td>
                                 <td>Москва и МО</td>
+                                <td>Согласована</td>
+                                <td>2018/07/21</td>
+                                <td>2018/07/21</td>
                                 <td class="text-right d-none d-lg-table-cell">
-                                    <button class="btn btn-sm btn-outline-secondary">
+                                    <button class="btn btn-sm btn-outline-secondary" data-toggle="tooltip" title="Скрыть">
                                         <i class="fas fa-eye-slash"></i>
                                     </button>
-                                    <a href="#" class="btn btn-sm btn-outline-primary">
+                                    <a href="#" class="btn btn-sm btn-outline-primary" data-toggle="tooltip" title="Скачать">
                                         <i class="fas fa-download"></i>
                                     </a>
-                                    <button class="btn btn-sm btn-outline-primary">
+                                    <button class="btn btn-sm btn-outline-primary" data-toggle="tooltip" title="Скопировать">
                                         <i class="fas fa-copy"></i>
                                     </button>
                                 </td>
                             </tr>
 
-                            <tr class="table-light">
+                            <tr>
                                 <td>
                                     <input type="checkbox" />
                                 </td>
                                 <td class="d-none d-lg-table-cell">2018/07/05</td>
-                                <td class="d-none d-lg-table-cell">Lance Miles</td>
                                 <td>JTI120Backwall__Мос.обл.__08-09.18</td>
                                 <td>Москва и МО</td>
+                                <td>Согласована</td>
+                                <td>2018/07/21</td>
+                                <td>2018/07/21</td>
                                 <td class="text-right d-none d-lg-table-cell">
-                                    <button class="btn btn-sm btn-outline-secondary">
+                                    <button class="btn btn-sm btn-outline-secondary" data-toggle="tooltip" title="Скрыть">
                                         <i class="fas fa-eye-slash"></i>
                                     </button>
-                                    <a href="#" class="btn btn-sm btn-outline-primary">
+                                    <a href="#" class="btn btn-sm btn-outline-primary" data-toggle="tooltip" title="Скачать">
                                         <i class="fas fa-download"></i>
                                     </a>
-                                    <button class="btn btn-sm btn-outline-primary">
+                                    <button class="btn btn-sm btn-outline-primary" data-toggle="tooltip" title="Скопировать">
                                         <i class="fas fa-copy"></i>
                                     </button>
                                 </td>
@@ -388,21 +601,22 @@
                                     <input type="checkbox" />
                                 </td>
                                 <td class="d-none d-lg-table-cell">2018/07/01</td>
-                                <td class="d-none d-lg-table-cell">Melvin Freeman</td>
                                 <td>JTI120Backwall__Мос.обл.__08-09.18</td>
                                 <td>Москва и МО</td>
+                                <td>Согласована</td>
+                                <td>2018/07/21</td>
+                                <td>2018/07/21</td>
                                 <td class="text-right d-none d-lg-table-cell">
-                                    <button class="btn btn-sm btn-outline-secondary">
-                                        <i class="fas fa-eye-slash"></i>
-                                    </button>
-                                    <a href="#" class="btn btn-sm btn-outline-primary">
-                                        <i class="fas fa-download"></i>
+                                    <a href="card.html" class="btn btn-sm btn-outline-secondary" data-toggle="tooltip" title="Изменить">
+                                        <i class="fas fa-pen-square"></i>
                                     </a>
-                                    <button class="btn btn-sm btn-outline-primary">
+                                    <button class="btn btn-sm btn-outline-primary" data-toggle="tooltip" title="Копировать">
                                         <i class="fas fa-copy"></i>
                                     </button>
+                                    <a href="planogram.png" target="_blank" class="btn btn-sm btn-outline-primary" data-toggle="tooltip" title="Скачать">
+                                        <i class="fas fa-download"></i>
+                                    </a>
                                 </td>
-
                             </tr>
                         </tbody>
                     </table>
@@ -418,17 +632,73 @@
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
         crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.js" crossorigin="anonymous"></script>
+
+    <script src="select.js"></script>
     <script>
         $('.table-hover tbody tr').click(function () {
-            location.href = 'card.html'
-        })
+            // location.href = 'card.html'
+        });
+
+        $('#regionType').selectize({
+            delimiter: ',',
+            persist: false,
+            onChange: function (v) { console.log('select changed') }
+        });
+
+
+        (function ($) {
+            $.fn.datepicker.dates['ru'] = {
+                days: ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"],
+                daysShort: ["Вск", "Пнд", "Втр", "Срд", "Чтв", "Птн", "Суб"],
+                daysMin: ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
+                months: ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"],
+                monthsShort: ["Янв", "Фев", "Мар", "Апр", "Май", "Июн", "Июл", "Авг", "Сен", "Окт", "Ноя", "Дек"],
+                today: "Сегодня",
+                clear: "Очистить",
+                format: "dd.mm.yyyy",
+                weekStart: 1,
+                monthsTitle: 'Месяцы'
+            };
+        }(jQuery));
+
+        $('#datetimepicker1, #datetimepicker2').datepicker({
+            autoclose: true,
+            format: "dd.mm.yyyy",
+            language: 'ru'
+        });
+        $('#datetimepicker3, #datetimepicker4, #datetimepicker5, #datetimepicker6').datepicker({
+            autoclose: true,
+            format: "mm.yyyy",
+            startView: "months",
+            minViewMode: "months",
+            language: 'ru'
+        });
+
+
+        $('.btn-outline-danger').click(function () {
+            var isRemove = confirm("Хотите удалить планограмму TI100BackwallNSS4-5__Мос.обл?");
+        });
+
+        $('#groupCopy').click(function () {
+            var is = confirm("Будет создано 20 новых планограмм. Продолжить?");
+        });
     </script>
+
+
 
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
     <script src="tables.js"></script>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="tables.css">
+
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
 </body>
 
 </html>
