@@ -16,7 +16,8 @@
     <link rel="stylesheet" href="select.css">
 
     <style>
-        .js-hidden {
+        .js-hidden,
+        .js-sku-settings {
             display: none;
         }
 
@@ -117,7 +118,7 @@
                         <a class="nav-link active" href="index.html">Новая планограмма</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">
+                        <a class="nav-link" href="approve.html">
                             На утверждении
                             <span class="badge badge-secondary" data-toggle="tooltip" title="На утверждении">4</span>
                             <span class="badge badge-danger" data-toggle="tooltip" title="Отклонено">2</span>
@@ -131,7 +132,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="success.html">Утвержденные</a>
+                        <a class="nav-link" href="success.html">Активные</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="search.html">Поиск</a>
@@ -172,7 +173,18 @@
                     </div>
                     <div class="col">
                         <div class="form-group" style="margin-bottom:.5rem;">
-                            <label for="deviceType">Тип торгового оборудования</label>
+                            <label for="deviceMainType">Тип оборудования</label>
+                            <select id="deviceMainType">
+                                <option></option>
+                                <option>BW 120</option>
+                            </select>
+                            <small class="form-text text-muted">Только активные шкафы</small>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="form-group" style="margin-bottom:.5rem;">
+                            <label for="deviceType">Подтип оборудования</label>
                             <select id="deviceType">
                                 <option></option>
                                 <option>JTI 120 Backwall</option>
@@ -217,6 +229,88 @@
                                 <small class="text-muted">Количество слотов под резервацию новых запусков</small>
                             </div>
                         </fieldset>
+
+                        <div class="row pt-2 js-sku-settings">
+                            <div class="col-sm">
+                                <fieldset class="js-hidden ">
+                                    <div class="form-group">
+                                        <label>Выбрать SKU для Winston</label>
+                                        <select id="f1">
+                                            <option></option>
+                                            <option>Winston Blue</option>
+                                            <option>Winston Classic</option>
+                                            <option>Winston Compact Plus Blue</option>
+                                            <option>Winston Compact Plus Impulse</option>
+                                        </select>
+
+                                        <select id="f2">
+                                            <option></option>
+                                            <option>Winston Blue</option>
+                                            <option>Winston Classic</option>
+                                            <option>Winston Compact Plus Blue</option>
+                                            <option>Winston Compact Plus Impulse</option>
+                                        </select>
+
+                                        <select id="f3">
+                                            <option></option>
+                                            <option>Winston Blue</option>
+                                            <option>Winston Classic</option>
+                                            <option>Winston Compact Plus Blue</option>
+                                            <option>Winston Compact Plus Impulse</option>
+                                        </select>
+
+                                        <select id="f4">
+                                            <option></option>
+                                            <option>Winston Blue</option>
+                                            <option>Winston Classic</option>
+                                            <option>Winston Compact Plus Blue</option>
+                                            <option>Winston Compact Plus Impulse</option>
+                                        </select>
+
+                                        <select id="f5">
+                                            <option></option>
+                                            <option>Winston Blue</option>
+                                            <option>Winston Classic</option>
+                                            <option>Winston Compact Plus Blue</option>
+                                            <option>Winston Compact Plus Impulse</option>
+                                        </select>
+
+                                        <select id="f6">
+                                            <option></option>
+                                            <option>Winston Blue</option>
+                                            <option>Winston Classic</option>
+                                            <option>Winston Compact Plus Blue</option>
+                                            <option>Winston Compact Plus Impulse</option>
+                                        </select>
+
+                                        <select id="f7">
+                                            <option></option>
+                                            <option>Winston Blue</option>
+                                            <option>Winston Classic</option>
+                                            <option>Winston Compact Plus Blue</option>
+                                            <option>Winston Compact Plus Impulse</option>
+                                        </select>
+
+                                        <select id="f8">
+                                            <option></option>
+                                            <option>Winston Blue</option>
+                                            <option>Winston Classic</option>
+                                            <option>Winston Compact Plus Blue</option>
+                                            <option>Winston Compact Plus Impulse</option>
+                                        </select>
+
+                                        <select id="f9">
+                                            <option></option>
+                                            <option>Winston Blue</option>
+                                            <option>Winston Classic</option>
+                                            <option>Winston Compact Plus Blue</option>
+                                            <option>Winston Compact Plus Impulse</option>
+                                        </select>
+
+                                    </div>
+                                </fieldset>
+                            </div>
+                        </div>
 
                         <a href="editor.html " class="btn btn-primary ">Cформировать планограмму</a>
                         </form>
@@ -265,7 +359,13 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>9</td>
+                                        <td>
+                                            9
+                                            <a id="showSKUSettings" style="margin-left:.5rem;" class="btn btn-sm btn-outline-primary" data-toggle="tooltip" title="Скрыть">
+                                                <i class="fas fa-cog"></i>
+                                                SKU
+                                            </a>
+                                        </td>
                                         <td>5</td>
                                         <td>3</td>
                                         <td>3</td>
@@ -291,6 +391,12 @@
     <script>
         $('#deviceType').selectize({
             onChange: function (v) { $(".js-hidden ").show(); }
+        });
+
+        $('#showSKUSettings').click(function () { $(".js-sku-settings").show(); })
+
+        $('#deviceMainType, #f1, #f2,#f3,#f4,#f5,#f6,#f7,#f8,#f9').selectize({
+            // onChange: function (v) { $(".js-hidden ").show(); }
         });
 
         $('#briefcaseTerritory').selectize({
